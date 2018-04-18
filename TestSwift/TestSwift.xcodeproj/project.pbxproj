@@ -54,6 +54,15 @@
 		9C0F04362085FEC0008A7C96 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F04352085FEC0008A7C96 /* View.swift */; };
 		9C0F04372085FEC0008A7C96 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F04352085FEC0008A7C96 /* View.swift */; };
 		9C0F04382085FEC0008A7C96 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F04352085FEC0008A7C96 /* View.swift */; };
+		9C5E7B432086F02D00999A9C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B422086F02D00999A9C /* Button.swift */; };
+		9C5E7B442086F0F800999A9C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B422086F02D00999A9C /* Button.swift */; };
+		9C5E7B452086F0F800999A9C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B422086F02D00999A9C /* Button.swift */; };
+		9C5E7B472086F57F00999A9C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B462086F57F00999A9C /* ImageView.swift */; };
+		9C5E7B492086F73900999A9C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B482086F73900999A9C /* TableViewCell.swift */; };
+		9C5E7B4A2086F7E400999A9C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B482086F73900999A9C /* TableViewCell.swift */; };
+		9C5E7B4B2086F7E500999A9C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B482086F73900999A9C /* TableViewCell.swift */; };
+		9C5E7B4C2086F7E800999A9C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B462086F57F00999A9C /* ImageView.swift */; };
+		9C5E7B4D2086F7E800999A9C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B462086F57F00999A9C /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +110,9 @@
 		9C0F042D2085FB75008A7C96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C0F04312085FCD8008A7C96 /* Ex_UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_UIScreen.swift; sourceTree = "<group>"; };
 		9C0F04352085FEC0008A7C96 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		9C5E7B422086F02D00999A9C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		9C5E7B462086F57F00999A9C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		9C5E7B482086F73900999A9C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +242,9 @@
 			children = (
 				9C0F042D2085FB75008A7C96 /* ViewController.swift */,
 				9C0F04352085FEC0008A7C96 /* View.swift */,
+				9C5E7B422086F02D00999A9C /* Button.swift */,
+				9C5E7B462086F57F00999A9C /* ImageView.swift */,
+				9C5E7B482086F73900999A9C /* TableViewCell.swift */,
 			);
 			path = BaseObjects;
 			sourceTree = "<group>";
@@ -369,8 +384,10 @@
 				9C0F04102085DF91008A7C96 /* Ex_UIDevice.swift in Sources */,
 				9C0F04082085DD4C008A7C96 /* Ex_IndexPath.swift in Sources */,
 				9C0F04182085E325008A7C96 /* Ex_Calendar.swift in Sources */,
+				9C5E7B492086F73900999A9C /* TableViewCell.swift in Sources */,
 				9C0F04042085DB95008A7C96 /* Ex_Array.swift in Sources */,
 				9C0F042E2085FB75008A7C96 /* ViewController.swift in Sources */,
+				9C5E7B472086F57F00999A9C /* ImageView.swift in Sources */,
 				9C0F04252085F718008A7C96 /* Notifiable.swift in Sources */,
 				9C0F03D22085DAFD008A7C96 /* ViewController.swift in Sources */,
 				9C0F04292085F952008A7C96 /* Ex_UIColor.swift in Sources */,
@@ -381,6 +398,7 @@
 				9C0F04142085E2AE008A7C96 /* Ex_Int.swift in Sources */,
 				9C0F041C2085E5A6008A7C96 /* Ex_Date.swift in Sources */,
 				9C0F03D82085DAFD008A7C96 /* TestSwift.xcdatamodeld in Sources */,
+				9C5E7B432086F02D00999A9C /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +407,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0F04052085DB95008A7C96 /* Ex_Array.swift in Sources */,
+				9C5E7B4A2086F7E400999A9C /* TableViewCell.swift in Sources */,
 				9C0F04112085DF91008A7C96 /* Ex_UIDevice.swift in Sources */,
+				9C5E7B4D2086F7E800999A9C /* ImageView.swift in Sources */,
 				9C0F041D2085E5A6008A7C96 /* Ex_Date.swift in Sources */,
 				9C0F04222085F5A9008A7C96 /* NibLoable.swift in Sources */,
 				9C0F04262085F718008A7C96 /* Notifiable.swift in Sources */,
@@ -398,6 +418,7 @@
 				9C0F04092085DD4C008A7C96 /* Ex_IndexPath.swift in Sources */,
 				9C0F04332085FCD8008A7C96 /* Ex_UIScreen.swift in Sources */,
 				9C0F04192085E325008A7C96 /* Ex_Calendar.swift in Sources */,
+				9C5E7B442086F0F800999A9C /* Button.swift in Sources */,
 				9C0F042A2085F952008A7C96 /* Ex_UIColor.swift in Sources */,
 				9C0F03E82085DAFD008A7C96 /* TestSwiftTests.swift in Sources */,
 				9C0F04372085FEC0008A7C96 /* View.swift in Sources */,
@@ -410,7 +431,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0F04062085DB95008A7C96 /* Ex_Array.swift in Sources */,
+				9C5E7B4B2086F7E500999A9C /* TableViewCell.swift in Sources */,
 				9C0F04122085DF91008A7C96 /* Ex_UIDevice.swift in Sources */,
+				9C5E7B4C2086F7E800999A9C /* ImageView.swift in Sources */,
 				9C0F041E2085E5A6008A7C96 /* Ex_Date.swift in Sources */,
 				9C0F04232085F5A9008A7C96 /* NibLoable.swift in Sources */,
 				9C0F04272085F718008A7C96 /* Notifiable.swift in Sources */,
@@ -419,6 +442,7 @@
 				9C0F040A2085DD4C008A7C96 /* Ex_IndexPath.swift in Sources */,
 				9C0F04342085FCD8008A7C96 /* Ex_UIScreen.swift in Sources */,
 				9C0F041A2085E325008A7C96 /* Ex_Calendar.swift in Sources */,
+				9C5E7B452086F0F800999A9C /* Button.swift in Sources */,
 				9C0F042B2085F952008A7C96 /* Ex_UIColor.swift in Sources */,
 				9C0F03F32085DAFD008A7C96 /* TestSwiftUITests.swift in Sources */,
 				9C0F04382085FEC0008A7C96 /* View.swift in Sources */,
