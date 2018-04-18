@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C0F03D02085DAFD008A7C96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F03CF2085DAFD008A7C96 /* AppDelegate.swift */; };
-		9C0F03D22085DAFD008A7C96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F03D12085DAFD008A7C96 /* ViewController.swift */; };
+		9C0F03D22085DAFD008A7C96 /* IViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F03D12085DAFD008A7C96 /* IViewController.swift */; };
 		9C0F03D52085DAFD008A7C96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F03D32085DAFD008A7C96 /* Main.storyboard */; };
 		9C0F03D82085DAFD008A7C96 /* TestSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F03D62085DAFD008A7C96 /* TestSwift.xcdatamodeld */; };
 		9C0F03DA2085DAFD008A7C96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F03D92085DAFD008A7C96 /* Assets.xcassets */; };
@@ -63,6 +63,13 @@
 		9C5E7B4B2086F7E500999A9C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B482086F73900999A9C /* TableViewCell.swift */; };
 		9C5E7B4C2086F7E800999A9C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B462086F57F00999A9C /* ImageView.swift */; };
 		9C5E7B4D2086F7E800999A9C /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B462086F57F00999A9C /* ImageView.swift */; };
+		9C5E7B502087338400999A9C /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B4F2087338400999A9C /* SQLite.swift */; };
+		9C5E7B512087338400999A9C /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B4F2087338400999A9C /* SQLite.swift */; };
+		9C5E7B522087338400999A9C /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B4F2087338400999A9C /* SQLite.swift */; };
+		9C5E7B55208733AB00999A9C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E7B54208733AB00999A9C /* libsqlite3.tbd */; };
+		9C5E7B582087404800999A9C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B572087404800999A9C /* Animation.swift */; };
+		9C5E7B592087404800999A9C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B572087404800999A9C /* Animation.swift */; };
+		9C5E7B5A2087404800999A9C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E7B572087404800999A9C /* Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +92,7 @@
 /* Begin PBXFileReference section */
 		9C0F03CC2085DAFD008A7C96 /* TestSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0F03CF2085DAFD008A7C96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C0F03D12085DAFD008A7C96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C0F03D12085DAFD008A7C96 /* IViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewController.swift; sourceTree = "<group>"; };
 		9C0F03D42085DAFD008A7C96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C0F03D72085DAFD008A7C96 /* TestSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestSwift.xcdatamodel; sourceTree = "<group>"; };
 		9C0F03D92085DAFD008A7C96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +120,9 @@
 		9C5E7B422086F02D00999A9C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9C5E7B462086F57F00999A9C /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		9C5E7B482086F73900999A9C /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		9C5E7B4F2087338400999A9C /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
+		9C5E7B54208733AB00999A9C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9C5E7B572087404800999A9C /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5E7B55208733AB00999A9C /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +158,7 @@
 				9C0F03E62085DAFD008A7C96 /* TestSwiftTests */,
 				9C0F03F12085DAFD008A7C96 /* TestSwiftUITests */,
 				9C0F03CD2085DAFD008A7C96 /* Products */,
+				9C5E7B53208733AB00999A9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				9C0F03CF2085DAFD008A7C96 /* AppDelegate.swift */,
-				9C0F03D12085DAFD008A7C96 /* ViewController.swift */,
+				9C0F03D12085DAFD008A7C96 /* IViewController.swift */,
 				9C0F03D32085DAFD008A7C96 /* Main.storyboard */,
 				9C0F03D92085DAFD008A7C96 /* Assets.xcassets */,
 				9C0F03DB2085DAFD008A7C96 /* LaunchScreen.storyboard */,
@@ -204,6 +216,8 @@
 		9C0F04012085DB42008A7C96 /* Codebase */ = {
 			isa = PBXGroup;
 			children = (
+				9C5E7B5620873E5F00999A9C /* Animation */,
+				9C5E7B4E2087336D00999A9C /* Database */,
 				9C0F042C2085FB51008A7C96 /* BaseObjects */,
 				9C0F041F2085F596008A7C96 /* Protocols */,
 				9C0F04022085DB60008A7C96 /* Extensions */,
@@ -247,6 +261,30 @@
 				9C5E7B482086F73900999A9C /* TableViewCell.swift */,
 			);
 			path = BaseObjects;
+			sourceTree = "<group>";
+		};
+		9C5E7B4E2087336D00999A9C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				9C5E7B4F2087338400999A9C /* SQLite.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		9C5E7B53208733AB00999A9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C5E7B54208733AB00999A9C /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C5E7B5620873E5F00999A9C /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				9C5E7B572087404800999A9C /* Animation.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0F04362085FEC0008A7C96 /* View.swift in Sources */,
+				9C5E7B502087338400999A9C /* SQLite.swift in Sources */,
 				9C0F04102085DF91008A7C96 /* Ex_UIDevice.swift in Sources */,
 				9C0F04082085DD4C008A7C96 /* Ex_IndexPath.swift in Sources */,
 				9C0F04182085E325008A7C96 /* Ex_Calendar.swift in Sources */,
@@ -389,7 +428,7 @@
 				9C0F042E2085FB75008A7C96 /* ViewController.swift in Sources */,
 				9C5E7B472086F57F00999A9C /* ImageView.swift in Sources */,
 				9C0F04252085F718008A7C96 /* Notifiable.swift in Sources */,
-				9C0F03D22085DAFD008A7C96 /* ViewController.swift in Sources */,
+				9C0F03D22085DAFD008A7C96 /* IViewController.swift in Sources */,
 				9C0F04292085F952008A7C96 /* Ex_UIColor.swift in Sources */,
 				9C0F040C2085DE7A008A7C96 /* Ex_DateFormatter.swift in Sources */,
 				9C0F04212085F5A9008A7C96 /* NibLoable.swift in Sources */,
@@ -398,6 +437,7 @@
 				9C0F04142085E2AE008A7C96 /* Ex_Int.swift in Sources */,
 				9C0F041C2085E5A6008A7C96 /* Ex_Date.swift in Sources */,
 				9C0F03D82085DAFD008A7C96 /* TestSwift.xcdatamodeld in Sources */,
+				9C5E7B582087404800999A9C /* Animation.swift in Sources */,
 				9C5E7B432086F02D00999A9C /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +459,8 @@
 				9C0F04332085FCD8008A7C96 /* Ex_UIScreen.swift in Sources */,
 				9C0F04192085E325008A7C96 /* Ex_Calendar.swift in Sources */,
 				9C5E7B442086F0F800999A9C /* Button.swift in Sources */,
+				9C5E7B512087338400999A9C /* SQLite.swift in Sources */,
+				9C5E7B592087404800999A9C /* Animation.swift in Sources */,
 				9C0F042A2085F952008A7C96 /* Ex_UIColor.swift in Sources */,
 				9C0F03E82085DAFD008A7C96 /* TestSwiftTests.swift in Sources */,
 				9C0F04372085FEC0008A7C96 /* View.swift in Sources */,
@@ -443,6 +485,8 @@
 				9C0F04342085FCD8008A7C96 /* Ex_UIScreen.swift in Sources */,
 				9C0F041A2085E325008A7C96 /* Ex_Calendar.swift in Sources */,
 				9C5E7B452086F0F800999A9C /* Button.swift in Sources */,
+				9C5E7B522087338400999A9C /* SQLite.swift in Sources */,
+				9C5E7B5A2087404800999A9C /* Animation.swift in Sources */,
 				9C0F042B2085F952008A7C96 /* Ex_UIColor.swift in Sources */,
 				9C0F03F32085DAFD008A7C96 /* TestSwiftUITests.swift in Sources */,
 				9C0F04382085FEC0008A7C96 /* View.swift in Sources */,
