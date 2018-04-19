@@ -13,7 +13,7 @@ import Foundation
 extension Date {
     
     /** 根据 20180101 来初始化，如果错误则返回当天日期 */
-    init(_ day: Int) {
+    public init(_ day: Int) {
         self = DateFormatter.int.date(from: day.description) ?? Date()
     }
     
@@ -26,48 +26,53 @@ extension Date {
     // MARK: 分解
     
     /**  */
-    var year: Int {
+    public var year: Int {
         return Calendar.current.component(.year, from: self)
     }
     
     /**  */
-    var month: Int {
+    public var month: Int {
         return Calendar.current.component(.month, from: self)
     }
     
     /**  */
-    var day: Int {
+    public var day: Int {
         return Calendar.current.component(.day, from: self)
     }
     
     /** 1 = Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday */
-    var week: Int {
+    public var week: Int {
         return Calendar.current.component(.weekday, from: self)
     }
     
     /**  */
-    var hour: Int {
+    public var hour: Int {
         return Calendar.current.component(.hour, from: self)
     }
     
     /**  */
-    var minute: Int {
+    public var minute: Int {
         return Calendar.current.component(.minute, from: self)
     }
     
     /**  */
-    var second: Int {
+    public var second: Int {
         return Calendar.current.component(.second, from: self)
     }
     
     /**  */
-    var time: Int {
+    public var time: Int {
         return hour * 3600 + minute * 60 + second
     }
     
     /** 20180101 */
-    var date: Int {
+    public var date: Int {
         return year * 10000 + month * 100 + day
+    }
+    
+    /** timeIntervalSince1970 */
+    public var time1970: Int {
+        return Int(timeIntervalSince1970)
     }
     
     // MARK: 天数
