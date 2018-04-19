@@ -26,23 +26,23 @@ public class SQLite {
     // MARK: - Values
     
     /** 数据库名称 */
-    var name: String = ""
+    public var name: String = ""
     /** 数据库路径，默认 "\(NSHomeDirectory())/Documents/" */
-    var path: String = "\(NSHomeDirectory())/Documents/"
+    public var path: String = "\(NSHomeDirectory())/Documents/"
     /** 数据库指针 */
-    var db: OpaquePointer? = nil
+    public var db: OpaquePointer? = nil
     /** 最新的自动 ID 序号 */
-    var last_id: Int {
+    public var last_id: Int {
         return Int(sqlite3_last_insert_rowid(db))
     }
     
     // MARK: - Log
     
     /** 是否打开日记输出 */
-    var is_log: Bool = true
+    public var is_log: Bool = true
     
     /**  */
-    func output(_ text: String) {
+    private func output(_ text: String) {
         if is_log {
             print("SQLite: \(text)")
         }
@@ -52,7 +52,7 @@ public class SQLite {
     
     /** 打开数据库，如果不存在就创建它。 */
     @discardableResult
-    func open() -> Bool {
+    public func open() -> Bool {
         objc_sync_enter(self)
         
         if db != nil {
@@ -81,7 +81,7 @@ public class SQLite {
     
     /** 关闭数据库 */
     @discardableResult
-    func close() -> Bool {
+    public func close() -> Bool {
         objc_sync_enter(self)
         
         let result = sqlite3_close(db) == SQLITE_OK
@@ -99,7 +99,7 @@ public class SQLite {
     // MARK: - Execute
     
     /** 执行不返回数据的 SQL 语句: 创表、更新、插入和删除操作. */
-    func execut(sql: String) -> Bool {
+    public func execut(sql: String) -> Bool {
         objc_sync_enter(self)
         
         if db == nil {
@@ -129,7 +129,7 @@ public class SQLite {
     // MARK: - Find
     
     /** 根据 sql 语句查询内容 */
-    func find(sql: String) -> [[String: Any]] {
+    public func find(sql: String) -> [[String: Any]] {
         objc_sync_enter(self)
         
         if db == nil {
@@ -182,7 +182,7 @@ public class SQLite {
     }
     
     /** 根据 sql 语句查询内容 */
-    func find<T: Any>(sql: String, line: () -> T, datas: (OpaquePointer?, Int32, T, String) -> Void, next: (T) -> Void) {
+    public func find<T: Any>(sql: String, line: () -> T, datas: (OpaquePointer?, Int32, T, String) -> Void, next: (T) -> Void) {
         objc_sync_enter(self)
         
         if db == nil {
@@ -221,8 +221,58 @@ public class SQLite {
         objc_sync_exit(self)
     }
     
+    /** 根据 sql 语句查询内容 */
+    public func find<T: Any>(sql: String, line: () -> T, values: (String, Any?) -> Void, next: (T) -> Void) {
+        objc_sync_enter(self)
+        
+        if db == nil {
+            output("execut db open faild - \(sql);")
+            objc_sync_exit(self)
+            return
+        }
+        
+        guard let c_sql = sql.cString(using: .utf8) else {
+            output("execut c_sql faild - \(sql);")
+            objc_sync_exit(self)
+            return
+        }
+        
+        // 执行检查
+        var statement: OpaquePointer? = nil
+        
+        // 检查语句
+        if sqlite3_prepare_v2(db, c_sql, -1, &statement, nil) != SQLITE_OK {
+            output("find faild - \(sql) - Error: \(self.error);")
+        } else { // 执行查询
+            while sqlite3_step(statement) == SQLITE_ROW { // 遍历每一行
+                let object = line()
+                let columns = sqlite3_column_count(statement)
+                for i in 0 ..< columns { // 遍历每一列
+                    let type = sqlite3_column_type(statement, i)
+                    let chars = UnsafePointer<CChar>(sqlite3_column_name(statement, i))!
+                    let name = String(cString: chars, encoding: .utf8)!
+
+                    var value: Any?
+                    switch type {
+                    case SQLITE_INTEGER: value = sqlite3_column_int(statement, i)
+                    case SQLITE_FLOAT:   value = sqlite3_column_double(statement, i)
+                    case SQLITE_TEXT:    value = String(cString: UnsafePointer<CUnsignedChar>(sqlite3_column_text(statement, i)))
+                    case SQLITE_BLOB:    value = Data(bytes: sqlite3_column_blob(statement, i), count: Int(sqlite3_column_bytes(statement, i)))
+                    default:             value = nil
+                    }
+                    values(name, value)
+                }
+                next(object)
+            }
+        }
+        sqlite3_finalize(statement)
+        
+        output("find success - \(sql);")
+        objc_sync_exit(self)
+    }
+    
     /** 根据 sql 语句查询单列内容 */
-    func find<T>(sql: String, `default` obj: T, datas: (T) -> Void) {
+    public func find<T>(sql: String, `default` obj: T, datas: (T) -> Void) {
         objc_sync_enter(self)
         
         if db == nil {
@@ -261,7 +311,7 @@ public class SQLite {
     }
     
     /** 根据 sql 语句查询结果数据 */
-    func find<T>(sql: String, `default` value: T) -> T {
+    public func find<T>(sql: String, `default` value: T) -> T {
         objc_sync_enter(self)
         
         if db == nil {
@@ -306,11 +356,13 @@ public class SQLite {
     // MARK: - Error
     
     /** 错误信息 */
-    var error: String {
+    public var error: String {
         return String(validatingUTF8:sqlite3_errmsg(db)) ?? ""
     }
     
+    
 }
+
 
 // MARK: - SQL 语句示例
 
