@@ -30,4 +30,14 @@ extension DateFormatter {
     /** HH:mm */
     static let time: DateFormatter = DateFormatter("HH:mm")
     
+    // MARK: Chinese
+    
+    class Chinese {
+        
+        /** yyyy 年 MM 月 dd 号 */
+        static let date: DateFormatter = DateFormatter("yyyy 年 MM 月 dd 号")
+        
+    }
+    
+    
 }

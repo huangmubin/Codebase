@@ -17,6 +17,10 @@ extension Date {
         self = DateFormatter.int.date(from: day.description) ?? Date()
     }
     
+    /** 根据 时间戳 来初始化，如果错误则返回当天日期 */
+    public init(time: Int) {
+        self = Date.init(timeIntervalSince1970: TimeInterval(time))
+    }
 }
 
 // MARK: - Calendar
