@@ -18,9 +18,14 @@ class IViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let v = InputView.load(nib: nil) {
-            v.frame = view.bounds
-           view.addSubview(v)
+        DispatchQueue.global().async {
+            Thread.sleep(forTimeInterval: 2)
+            DispatchQueue.main.async {
+                if let v = InputTextView.load(nib: nil) {
+                    v.frame = self.view.bounds
+                    self.view.addSubview(v)
+                }
+            }
         }
     }
 

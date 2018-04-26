@@ -22,9 +22,4 @@ extension UIScreen {
         return UIScreen.main.bounds.height
     }
     
-    /**  */
-    var bounds: CGRect {
-        return UIScreen.main.bounds
-    }
-    
 }

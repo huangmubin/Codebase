@@ -42,6 +42,12 @@ public class InputView: UIView {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: - Super View
+    
+    public override func didMoveToSuperview() {
+        self.animate_did_open()
+    }
+    
     // MARK: - Deploy
     
     /** Call when init */
@@ -96,8 +102,9 @@ public class InputView: UIView {
     
     /** Open Animate */
     private func animate_open(complete: @escaping () -> Void) {
+        self.alpha = 0
         self.animate_will_open()
-        UIView.animate(withDuration: 0.25, animations: {
+        UIView.animate(withDuration: 2, animations: {
             self.alpha = 1
         }, completion: { _ in
             self.animate_did_open()
@@ -154,6 +161,24 @@ public class InputView: UIView {
     
     /** Container View */
     @IBOutlet weak var container: UIView!
+    
+    /** Container Size */
+    public var container_size: CGSize = CGSize()
+    
+    /**  */
+    public func container_width() -> CGFloat {
+        return bounds.width - container_size.width
+    }
+    
+    /**  */
+    public func container_top(bottom: CGFloat) -> CGFloat {
+        return bounds.height - container_size.height - bottom
+    }
+    
+    /**  */
+    public func container_down(top: CGFloat) -> CGFloat {
+        return bounds.height - container_size.height - top
+    }
     
     // MARK: - Layout
     

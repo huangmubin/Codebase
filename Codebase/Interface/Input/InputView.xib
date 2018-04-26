@@ -11,14 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputView" customModule="TestSwift" customModuleProvider="target">
-            <connections>
-                <outlet property="layout_bottom" destination="4Ng-4r-1RV" id="Nxn-Jk-6b8"/>
-                <outlet property="layout_center" destination="KuQ-t5-ZGN" id="7Zg-Ta-f6l"/>
-                <outlet property="layout_top" destination="GRA-GQ-R2R" id="kBh-YG-1ns"/>
-                <outlet property="layout_width" destination="bhx-eM-FV4" id="ytQ-Vt-6kr"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputView" customModule="TestSwift" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InputView" customModule="TestSwift" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -111,6 +104,10 @@
                 <outlet property="cancel" destination="uOo-Rj-gle" id="3fl-RR-AVc"/>
                 <outlet property="container" destination="ijb-2P-F71" id="VmP-F6-uQl"/>
                 <outlet property="effect" destination="Czt-OJ-heb" id="bGB-cU-1mi"/>
+                <outlet property="layout_bottom" destination="4Ng-4r-1RV" id="5MV-0t-FX6"/>
+                <outlet property="layout_center" destination="KuQ-t5-ZGN" id="AtI-c9-vgf"/>
+                <outlet property="layout_top" destination="GRA-GQ-R2R" id="J6t-PM-idn"/>
+                <outlet property="layout_width" destination="bhx-eM-FV4" id="oVD-aO-AMI"/>
                 <outlet property="save" destination="9ob-8n-geG" id="JYc-uD-wVd"/>
                 <outlet property="title" destination="uLi-GQ-IBF" id="pzy-my-d5N"/>
             </connections>
