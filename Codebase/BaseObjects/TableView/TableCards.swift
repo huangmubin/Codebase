@@ -42,12 +42,17 @@ public class TableCards: TableView, UITableViewDataSource, UITableViewDelegate {
     
     /** 获取并缓存 Cell */
     public func cell(_ index: IndexPath) -> TableCardsCell {
-        if let cell = cards[index.row].cell {
+        let card = cards[index.row]
+        if let cell = card.cell {
             cell.view_update(index: index, controller: controller)
+            cell.card = card
+            cell.table = self
             return cell
         } else {
             let cell = self.dequeueReusableCell(withIdentifier: cards[index.row].identifier, for: index) as! TableCardsCell
             cell.view_update(index: index, controller: controller)
+            cell.card = card
+            cell.table = self
             cards[index.row].cell = cell
             return cell
         }

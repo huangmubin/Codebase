@@ -10,6 +10,10 @@ import UIKit
 
 class InputTextView: InputView {
 
+    // MARK: - Text View
+    
+    @IBOutlet weak var text: UITextView!
+    
     // MARK: - View Deploy
     
     /** Set the container_size, layouts, add observer */
@@ -21,8 +25,8 @@ class InputTextView: InputView {
         
         DispatchQueue.main.async {
             self.layout_width.constant = self.container_width()
-            self.layout_bottom.constant = self.container_top(bottom: UIScreen.main.bounds.height)
-            self.layout_top.constant = self.container_top(bottom: self.layout_bottom.constant)
+            self.layout_top.constant = self.container_top(maxY: self.bounds.height)
+            self.layout_bottom.constant = self.container_down(minY: self.layout_top.constant)
         }
         
         NotificationCenter.default.addObserver(
@@ -30,6 +34,13 @@ class InputTextView: InputView {
             name: .UIKeyboardWillChangeFrame,
             object: nil
         )
+    }
+    
+    // MARK: - Animate
+    
+    /** Override open animate completed */
+    override func animate_did_open() {
+        text.becomeFirstResponder()
     }
     
     // MARK: - Key board Observer
@@ -55,8 +66,11 @@ class InputTextView: InputView {
     
     /**  */
     func keyboard_show(rect: CGRect) {
+        let top = self.container_top(maxY: rect.minY - 20)
+        let down = self.container_down(minY: top)
         UIView.animate(withDuration: 0.25, animations: {
-            self.layout_bottom.constant = rect.height + 20
+            self.layout_top.constant = top
+            self.layout_bottom.constant = down
             self.layoutIfNeeded()
         }, completion: { _ in
             self.keyboard = rect
@@ -65,8 +79,11 @@ class InputTextView: InputView {
     
     /**  */
     func keyboard_down(rect: CGRect) {
+        let top = self.container_top(maxY: rect.minY - 20)
+        let down = self.container_down(minY: top)
         UIView.animate(withDuration: 0.25, animations: {
-            self.layout_bottom.constant = 20
+            self.layout_top.constant = top
+            self.layout_bottom.constant = down
             self.layoutIfNeeded()
         }, completion: { [weak self] _ in
             self?.keyboard = nil

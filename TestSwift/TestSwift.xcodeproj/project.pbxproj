@@ -16,6 +16,9 @@
 		9C0F03E82085DAFD008A7C96 /* TestSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F03E72085DAFD008A7C96 /* TestSwiftTests.swift */; };
 		9C0F03F32085DAFD008A7C96 /* TestSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F03F22085DAFD008A7C96 /* TestSwiftUITests.swift */; };
 		9C5E7B55208733AB00999A9C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E7B54208733AB00999A9C /* libsqlite3.tbd */; };
+		9C5F261B209328B70080E1DC /* CardTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F261A209328B70080E1DC /* CardTable.swift */; };
+		9C5F261D209328C10080E1DC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F261C209328C10080E1DC /* CardView.swift */; };
+		9C5F261F20934EE90080E1DC /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F261E20934EE90080E1DC /* Operator.swift */; };
 		9C8FAE4D208F253200AB8CE7 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE24208F253200AB8CE7 /* Animation.swift */; };
 		9C8FAE4E208F253200AB8CE7 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE26208F253200AB8CE7 /* Button.swift */; };
 		9C8FAE4F208F253200AB8CE7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE27208F253200AB8CE7 /* ImageView.swift */; };
@@ -83,6 +86,9 @@
 		9C0F03F22085DAFD008A7C96 /* TestSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwiftUITests.swift; sourceTree = "<group>"; };
 		9C0F03F42085DAFD008A7C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C5E7B54208733AB00999A9C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		9C5F261A209328B70080E1DC /* CardTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTable.swift; sourceTree = "<group>"; };
+		9C5F261C209328C10080E1DC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9C5F261E20934EE90080E1DC /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		9C8FAE24208F253200AB8CE7 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		9C8FAE26208F253200AB8CE7 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9C8FAE27208F253200AB8CE7 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
@@ -213,6 +219,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C5F2619209328950080E1DC /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F261A209328B70080E1DC /* CardTable.swift */,
+				9C5F261C209328C10080E1DC /* CardView.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 		9C8FAE22208F253200AB8CE7 /* Codebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,11 +253,12 @@
 		9C8FAE25208F253200AB8CE7 /* BaseObjects */ = {
 			isa = PBXGroup;
 			children = (
+				9C5F2619209328950080E1DC /* ScrollView */,
 				9C8FAE26208F253200AB8CE7 /* Button.swift */,
 				9C8FAE27208F253200AB8CE7 /* ImageView.swift */,
-				9C8FAE28208F253200AB8CE7 /* TableView */,
 				9C8FAE2D208F253200AB8CE7 /* View.swift */,
 				9C8FAE2E208F253200AB8CE7 /* ViewController.swift */,
+				9C8FAE28208F253200AB8CE7 /* TableView */,
 			);
 			path = BaseObjects;
 			sourceTree = "<group>";
@@ -337,6 +353,7 @@
 			children = (
 				9C8FAE4B208F253200AB8CE7 /* NibLoable.swift */,
 				9C8FAE4C208F253200AB8CE7 /* Notifiable.swift */,
+				9C5F261E20934EE90080E1DC /* Operator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -497,6 +514,7 @@
 				9C8FAE55208F253200AB8CE7 /* ViewController.swift in Sources */,
 				9C8FAE64208F253200AB8CE7 /* InputTextView.swift in Sources */,
 				9C8FAE58208F253200AB8CE7 /* Ex_Calendar.swift in Sources */,
+				9C5F261B209328B70080E1DC /* CardTable.swift in Sources */,
 				9C8FAE51208F253200AB8CE7 /* TableCardsCell.swift in Sources */,
 				9C8FAE5F208F253200AB8CE7 /* Ex_UIDevice.swift in Sources */,
 				9C0F03D02085DAFD008A7C96 /* AppDelegate.swift in Sources */,
@@ -506,6 +524,8 @@
 				9C8FAE54208F253200AB8CE7 /* View.swift in Sources */,
 				9C8FAE5B208F253200AB8CE7 /* Ex_IndexPath.swift in Sources */,
 				9C8FAE61208F253200AB8CE7 /* Ex_UIScreen.swift in Sources */,
+				9C5F261F20934EE90080E1DC /* Operator.swift in Sources */,
+				9C5F261D209328C10080E1DC /* CardView.swift in Sources */,
 				9C0F03D82085DAFD008A7C96 /* TestSwift.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

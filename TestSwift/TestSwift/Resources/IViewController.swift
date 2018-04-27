@@ -12,21 +12,22 @@ class IViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let aa: [CGFloat] = [0,1,2,3,4,5]
+        print(aa.count(value: { $0 }))
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.global().async {
-            Thread.sleep(forTimeInterval: 2)
-            DispatchQueue.main.async {
-                if let v = InputTextView.load(nib: nil) {
-                    v.frame = self.view.bounds
-                    self.view.addSubview(v)
-                }
-            }
-        }
+//        DispatchQueue.global().async {
+//            Thread.sleep(forTimeInterval: 0.5)
+//            DispatchQueue.main.async {
+//                if let v = InputTextView.load(nib: nil) {
+//                    v.frame = self.view.bounds
+//                    self.view.addSubview(v)
+//                }
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {

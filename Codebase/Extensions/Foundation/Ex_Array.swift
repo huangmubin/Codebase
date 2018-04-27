@@ -5,17 +5,17 @@
 //  Create: 2018-04-17
 //
 
-import Foundation
+import UIKit
 
 // MARK: - Counts
 
 extension Array {
     
     /** 快速对元素进行运算 */
-    public func count(value body: (Element) -> Int) -> Int {
-        var c: Int = 0
-        forEach({ c += body($0) })
-        return c
+    public func count<T: Operator_Addition>(value body: (Element) -> T) -> T {
+        var value: T = T()
+        forEach({ value = value + body($0) })
+        return value
     }
     
 }

@@ -45,7 +45,7 @@ public class InputView: UIView {
     // MARK: - Super View
     
     public override func didMoveToSuperview() {
-        self.animate_did_open()
+        self.animate_open()
     }
     
     // MARK: - Deploy
@@ -101,10 +101,10 @@ public class InputView: UIView {
     // MARK: - Animate
     
     /** Open Animate */
-    private func animate_open(complete: @escaping () -> Void) {
+    private func animate_open() {
         self.alpha = 0
         self.animate_will_open()
-        UIView.animate(withDuration: 2, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.alpha = 1
         }, completion: { _ in
             self.animate_did_open()
@@ -167,17 +167,22 @@ public class InputView: UIView {
     
     /**  */
     public func container_width() -> CGFloat {
-        return bounds.width - container_size.width
+        return container_size.width - bounds.width
+    }
+    
+    /** bottom is the maxY */
+    public func container_top(maxY: CGFloat) -> CGFloat {
+        let minY = (bounds.height - container_size.height) / 2
+        if minY + container_size.height > maxY {
+            return max(maxY - container_size.height, 20)
+        } else {
+            return minY
+        }
     }
     
     /**  */
-    public func container_top(bottom: CGFloat) -> CGFloat {
-        return bounds.height - container_size.height - bottom
-    }
-    
-    /**  */
-    public func container_down(top: CGFloat) -> CGFloat {
-        return bounds.height - container_size.height - top
+    public func container_down(minY: CGFloat) -> CGFloat {
+        return bounds.height - minY - container_size.height
     }
     
     // MARK: - Layout
