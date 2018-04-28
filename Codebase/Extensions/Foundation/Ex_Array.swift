@@ -19,3 +19,19 @@ extension Array {
     }
     
 }
+
+// MARK: - Find
+
+extension Array {
+    
+    /** 快速查找并获取元素 */
+    public func find(condition body: (Element) throws -> Bool) -> Element? {
+        do {
+            if let index = try self.index(where: body) {
+                return self[index]
+            }
+        } catch { }
+        return nil
+    }
+    
+}

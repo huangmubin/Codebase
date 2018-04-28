@@ -16,6 +16,14 @@ public class CardView: View {
     /** Cart Table */
     public weak var table: CardTable!
     
+    // MARK: - identifier
+    
+    /** identifier */
+    @IBInspectable var identifier: String = ""
+    
+    /** Index */
+    @IBInspectable var index: Int = 0
+    
     // MARK: - Visible
     
     /** is visibility on card table or no */
@@ -36,6 +44,16 @@ public class CardView: View {
     
     /** Override: Call when the table update content size */
     public func update_location() {}
+    
+    // MARK: - Scroll
+    
+    /** Override: Scroll Action, Call when appear and scroll. */
+    public func scroll_action() {}
+    
+    // MARK: - Gesture
+    
+    /** Override: Tap Select */
+    public func tap_gesture(_ sender: UITapGestureRecognizer) {}
     
     
 }

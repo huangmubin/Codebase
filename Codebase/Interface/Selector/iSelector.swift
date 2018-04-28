@@ -126,6 +126,17 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
         }
     }
     
+    /** Start to end */
+    @IBInspectable public var default_data2: CGSize = CGSize.zero {
+        didSet {
+            let s = Int(default_data2.width)
+            let e = Int(default_data2.height)
+            if s < e {
+                data = iSelector.number(s, e)
+            }
+        }
+    }
+    
     /** 总共显示多少个单元 */
     @IBInspectable public var cells: Int = 5 {
         didSet {

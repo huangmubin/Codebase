@@ -26,12 +26,27 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
     /** 初始化 */
     public func view_deploy() {
         delegate = self
+        tap = UITapGestureRecognizer(target: self, action: #selector(tap_gesture(_:)))
+        addGestureRecognizer(tap)
     }
+    
+    // MARK: - Controller
+    
+    /** Self's Controller */
+    public weak var controller: UIViewController?
     
     // MARK: - Cards
     
     /** Cards */
-    public var cards: [CardView] = []
+    @IBOutlet public var cards: [CardView] = []
+    
+    // MARK: - Separator
+    
+    /** Separator: default nil, if no, will add between card */
+    @IBOutlet public var separator: CardSeparator? = nil
+    
+    /**  */
+    private var separators: [CardSeparator] = []
     
     // MARK: - Reload
     
@@ -40,6 +55,37 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
         for sub in subviews {
             sub.removeFromSuperview()
         }
+        
+        // Separator
+        if let model = separator {
+            model.removeFromSuperview()
+            let count = cards.count - separators.count - 1
+            if count > 0 {
+                for _ in 0 ..< count {
+                    let line = CardSeparator()
+                    separators.append(line)
+                }
+            } else if count < 0 {
+                for _ in 0 ..< -count {
+                    if separators.count > 0 {
+                        separators.removeFirst()
+                    }
+                }
+            }
+            
+            for (i, line) in separators.enumerated() {
+                line.left = model.left
+                line.right = model.right
+                line.backgroundColor = model.backgroundColor
+                line.frame.origin.x = model.left
+                line.frame.size.height = model.frame.height
+                line.frame.size.width = bounds.width - model.left - model.right
+                line.tag = i
+                addSubview(line)
+            }
+        }
+        
+        // Card
         for card in cards {
             addSubview(card)
             card.table = self
@@ -64,8 +110,24 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
         }
     }
     
+    /** Update the cards's edge, can't auto update
+     x: top
+     y: down
+     w: left
+     h: right
+     */
+    @IBInspectable var ib_edge: CGRect = CGRect.zero {
+        didSet {
+            edge = UIEdgeInsets(
+                top: ib_edge.origin.x,
+                left: ib_edge.width,
+                bottom: ib_edge.origin.y,
+                right: ib_edge.height
+            )
+        }
+    }
     /** Update the cards's edge, can't auto update */
-    @IBInspectable var edge: UIEdgeInsets = UIEdgeInsets.zero
+    public var edge: UIEdgeInsets = UIEdgeInsets.zero
     
     /** 大小变化 */
     public func view_bounds() {
@@ -74,10 +136,11 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
     
     /** 更新 Container Size */
     public func update_content_size() {
+        let separator_height = (separator == nil ? 0 : (CGFloat(cards.count) * separator!.frame.height))
         contentSize.width = bounds.width
-        contentSize.height = cards.count(value: {$0.bounds.height}) + (edge.top + edge.bottom) * CGFloat(cards.count)
+        contentSize.height = cards.count(value: {$0.bounds.height}) + (edge.top + edge.bottom) * CGFloat(cards.count) + separator_height
         var y: CGFloat = 0
-        for card in cards {
+        for (i, card) in cards.enumerated() {
             card.frame = CGRect(
                 x: edge.left, y: y,
                 width: bounds.width - edge.left - edge.right,
@@ -85,6 +148,11 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
             )
             card.update_location()
             y = y + card.frame.height + edge.top + edge.bottom
+            if let line = separators.find(condition: { $0.tag == i }) {
+                line.frame.origin.y = y
+                line.frame.size.width = bounds.width - line.left - line.right
+                y = y + line.frame.height
+            }
         }
     }
     
@@ -103,7 +171,27 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
                 card.did_appear()
             default:break
             }
+            //
+            if card.appear {
+                card.scroll_action()
+            }
         }
     }
 
+    // MARK: - Touch
+    
+    /**  */
+    public var tap: UITapGestureRecognizer!
+    
+    /**  */
+    @objc public func tap_gesture(_ sender: UITapGestureRecognizer) {
+        var point = sender.location(in: self)
+        point.y += contentOffset.y
+        for card in cards {
+            if card.appear && card.frame.minY < point.y && card.frame.maxY > point.y {
+                card.tap_gesture(sender)
+            }
+        }
+    }
+    
 }

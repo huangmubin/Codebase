@@ -19,7 +19,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1w-8C-OU7" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="60" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UZ-KB-8ZE">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UZ-KB-8ZE">
                             <rect key="frame" x="10.5" y="60" width="39" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -32,6 +32,11 @@
                         <constraint firstAttribute="width" constant="60" id="Sly-u8-8VT"/>
                         <constraint firstItem="8UZ-KB-8ZE" firstAttribute="centerY" secondItem="S1w-8C-OU7" secondAttribute="centerY" id="kJ4-xS-IYW"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="8UZ-KB-8ZE" id="Epv-PV-tgQ"/>
                     </connections>
@@ -39,7 +44,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lc5-F3-xrX" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="78" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObO-O1-vb2">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObO-O1-vb2">
                             <rect key="frame" x="6" y="60" width="18" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -52,6 +57,11 @@
                         <constraint firstAttribute="width" constant="30" id="PbS-tw-inc"/>
                         <constraint firstItem="ObO-O1-vb2" firstAttribute="centerY" secondItem="Lc5-F3-xrX" secondAttribute="centerY" id="h5q-X1-Pq6"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="ObO-O1-vb2" id="kE5-Xm-gU8"/>
                     </connections>
@@ -59,7 +69,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05m-Jg-erb" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="126" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpW-KY-K2e">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpW-KY-K2e">
                             <rect key="frame" x="6" y="60" width="18" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -72,6 +82,11 @@
                         <constraint firstItem="gpW-KY-K2e" firstAttribute="centerY" secondItem="05m-Jg-erb" secondAttribute="centerY" id="hqs-Po-nCp"/>
                         <constraint firstItem="gpW-KY-K2e" firstAttribute="centerX" secondItem="05m-Jg-erb" secondAttribute="centerX" id="pKs-3y-LUg"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="gpW-KY-K2e" id="sxD-GT-NfC"/>
                     </connections>
@@ -79,7 +94,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-T9-UuR" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="174" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="483-TG-XCm">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="483-TG-XCm">
                             <rect key="frame" x="4.5" y="60" width="21" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -92,6 +107,11 @@
                         <constraint firstItem="483-TG-XCm" firstAttribute="centerY" secondItem="yMd-T9-UuR" secondAttribute="centerY" id="KV0-pf-CI7"/>
                         <constraint firstAttribute="width" constant="30" id="kf8-FQ-V0H"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="483-TG-XCm" id="7QM-3v-Crp"/>
                     </connections>
@@ -99,7 +119,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gi5-Ob-l5Z" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="222" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIV-Nt-Gih">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIV-Nt-Gih">
                             <rect key="frame" x="4.5" y="60" width="21" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -112,6 +132,11 @@
                         <constraint firstItem="SIV-Nt-Gih" firstAttribute="centerY" secondItem="Gi5-Ob-l5Z" secondAttribute="centerY" id="avA-KY-aSd"/>
                         <constraint firstAttribute="width" constant="30" id="eMB-MK-84G"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="SIV-Nt-Gih" id="RfU-QS-3se"/>
                     </connections>
@@ -119,7 +144,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fkj-dj-mji" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="270" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0W-g8-UbG">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0W-g8-UbG">
                             <rect key="frame" x="4.5" y="60" width="21" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -132,6 +157,11 @@
                         <constraint firstItem="g0W-g8-UbG" firstAttribute="centerY" secondItem="Fkj-dj-mji" secondAttribute="centerY" id="I3m-hH-GNi"/>
                         <constraint firstAttribute="width" constant="30" id="TcQ-BU-Tj6"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="g0W-g8-UbG" id="RWW-Bk-eIo"/>
                     </connections>
@@ -225,7 +255,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVP-as-Yyl" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyW-7S-fCl">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyW-7S-fCl">
                             <rect key="frame" x="4.5" y="60" width="21" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -238,6 +268,11 @@
                         <constraint firstItem="dyW-7S-fCl" firstAttribute="centerY" secondItem="oVP-as-Yyl" secondAttribute="centerY" id="h1e-TL-rr9"/>
                         <constraint firstAttribute="width" constant="30" id="qLf-dd-pGU"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="dyW-7S-fCl" id="0QW-EJ-I5c"/>
                     </connections>
@@ -245,7 +280,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdH-XU-ylQ" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="48" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7V-If-FN5">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7V-If-FN5">
                             <rect key="frame" x="4.5" y="60" width="21" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -258,6 +293,11 @@
                         <constraint firstItem="x7V-If-FN5" firstAttribute="centerY" secondItem="YdH-XU-ylQ" secondAttribute="centerY" id="ICE-tY-SeJ"/>
                         <constraint firstItem="x7V-If-FN5" firstAttribute="centerX" secondItem="YdH-XU-ylQ" secondAttribute="centerX" id="PV2-YX-WBp"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="x7V-If-FN5" id="0FJ-n8-uma"/>
                     </connections>
@@ -265,7 +305,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbW-ab-gwT" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="96" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-au-XP9">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-au-XP9">
                             <rect key="frame" x="4.5" y="60" width="21" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -278,6 +318,11 @@
                         <constraint firstAttribute="width" constant="30" id="hGp-YO-AU1"/>
                         <constraint firstItem="u7D-au-XP9" firstAttribute="centerY" secondItem="DbW-ab-gwT" secondAttribute="centerY" id="nle-Zi-fbb"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="u7D-au-XP9" id="1fG-m7-tpM"/>
                     </connections>
@@ -335,7 +380,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktv-pZ-Jes" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="60" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6I-NC-o1m">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6I-NC-o1m">
                             <rect key="frame" x="10.5" y="60" width="39" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -348,6 +393,11 @@
                         <constraint firstItem="R6I-NC-o1m" firstAttribute="centerY" secondItem="ktv-pZ-Jes" secondAttribute="centerY" id="RL0-ba-N0U"/>
                         <constraint firstItem="R6I-NC-o1m" firstAttribute="centerX" secondItem="ktv-pZ-Jes" secondAttribute="centerX" id="psG-FU-OXP"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="R6I-NC-o1m" id="Uht-vM-7Tq"/>
                     </connections>
@@ -355,7 +405,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwF-Q0-BJf" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="78" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-rp-r0q">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-rp-r0q">
                             <rect key="frame" x="6" y="60" width="18" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -368,6 +418,11 @@
                         <constraint firstItem="fA1-rp-r0q" firstAttribute="centerY" secondItem="RwF-Q0-BJf" secondAttribute="centerY" id="NIa-mQ-MO1"/>
                         <constraint firstItem="fA1-rp-r0q" firstAttribute="centerX" secondItem="RwF-Q0-BJf" secondAttribute="centerX" id="vb8-Jd-QQX"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="fA1-rp-r0q" id="7io-yg-g0C"/>
                     </connections>
@@ -375,7 +430,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAv-YD-oP7" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="126" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCt-Ri-S9J">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCt-Ri-S9J">
                             <rect key="frame" x="6" y="60" width="18" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -388,6 +443,11 @@
                         <constraint firstItem="KCt-Ri-S9J" firstAttribute="centerY" secondItem="aAv-YD-oP7" secondAttribute="centerY" id="Jw3-VE-8Lu"/>
                         <constraint firstItem="KCt-Ri-S9J" firstAttribute="centerX" secondItem="aAv-YD-oP7" secondAttribute="centerX" id="mTP-Dy-2ef"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="KCt-Ri-S9J" id="wxj-69-mDi"/>
                     </connections>
@@ -445,7 +505,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="op8-9e-zlB" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-OD-J88">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-OD-J88">
                             <rect key="frame" x="4.5" y="60" width="21" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -458,6 +518,11 @@
                         <constraint firstItem="2CA-OD-J88" firstAttribute="centerY" secondItem="op8-9e-zlB" secondAttribute="centerY" id="f1Y-JQ-Bdv"/>
                         <constraint firstItem="2CA-OD-J88" firstAttribute="centerX" secondItem="op8-9e-zlB" secondAttribute="centerX" id="zUO-n8-nqe"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="2CA-OD-J88" id="mc7-PB-pBY"/>
                     </connections>
@@ -465,7 +530,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kmd-gv-TXf" customClass="iSelector" customModule="My" customModuleProvider="target">
                     <rect key="frame" x="48" y="0.0" width="30" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1C-Zf-IVK">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1C-Zf-IVK">
                             <rect key="frame" x="4.5" y="60" width="21" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -478,6 +543,11 @@
                         <constraint firstAttribute="width" constant="30" id="SZD-6e-GED"/>
                         <constraint firstItem="Q1C-Zf-IVK" firstAttribute="centerX" secondItem="Kmd-gv-TXf" secondAttribute="centerX" id="eL5-Yq-qr8"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="default_data">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="Q1C-Zf-IVK" id="5FJ-sn-HOw"/>
                     </connections>
@@ -567,6 +637,62 @@
                 <outlet property="label" destination="8V3-Cp-eRs" id="fHy-Le-T8z"/>
             </connections>
             <point key="canvasLocation" x="2" y="-294.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="M3W-Zd-j3i">
+            <rect key="frame" x="0.0" y="0.0" width="222" height="167"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgA-aK-NXy" customClass="iSelector" customModule="My" customModuleProvider="target">
+                    <rect key="frame" x="71" y="0.0" width="80" height="167"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdv-cc-60h">
+                            <rect key="frame" x="25.5" y="73" width="29" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="vdv-cc-60h" firstAttribute="centerX" secondItem="owG-Jv-Lsz" secondAttribute="centerX" id="QMv-Cf-3Yc"/>
+                        <constraint firstItem="vdv-cc-60h" firstAttribute="centerY" secondItem="owG-Jv-Lsz" secondAttribute="centerY" id="TyH-JJ-0ja"/>
+                        <constraint firstAttribute="width" constant="80" id="Ybm-Hq-iqD"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="owG-Jv-Lsz"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="i_direction" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="label" destination="vdv-cc-60h" id="2bG-fV-j36"/>
+                    </connections>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEc-OQ-iqL">
+                    <rect key="frame" x="25" y="73" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fp-ZO-nzY">
+                    <rect key="frame" x="155" y="73" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Vnf-xL-GT7" firstAttribute="bottom" secondItem="VgA-aK-NXy" secondAttribute="bottom" id="6D2-q2-ATI"/>
+                <constraint firstItem="zEc-OQ-iqL" firstAttribute="centerY" secondItem="VgA-aK-NXy" secondAttribute="centerY" id="JW5-Gl-hXt"/>
+                <constraint firstItem="VgA-aK-NXy" firstAttribute="centerX" secondItem="Vnf-xL-GT7" secondAttribute="centerX" id="Jv6-VL-DFD"/>
+                <constraint firstItem="VgA-aK-NXy" firstAttribute="leading" secondItem="zEc-OQ-iqL" secondAttribute="trailing" constant="4" id="P8g-ld-6JM"/>
+                <constraint firstItem="9fp-ZO-nzY" firstAttribute="centerY" secondItem="VgA-aK-NXy" secondAttribute="centerY" id="dRr-d8-iV9"/>
+                <constraint firstItem="VgA-aK-NXy" firstAttribute="top" secondItem="Vnf-xL-GT7" secondAttribute="top" id="sV5-aF-5RK"/>
+                <constraint firstItem="VgA-aK-NXy" firstAttribute="centerY" secondItem="Vnf-xL-GT7" secondAttribute="centerY" id="yTg-mw-8Zt"/>
+                <constraint firstItem="9fp-ZO-nzY" firstAttribute="leading" secondItem="VgA-aK-NXy" secondAttribute="trailing" constant="4" id="yXY-01-LlZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Vnf-xL-GT7"/>
+            <point key="canvasLocation" x="-110" y="222"/>
         </view>
     </objects>
 </document>
