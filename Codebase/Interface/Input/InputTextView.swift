@@ -23,17 +23,24 @@ class InputTextView: InputView {
             height: bounds.height / 3
         )
         
-        DispatchQueue.main.async {
-            self.layout_width.constant = self.container_width()
-            self.layout_top.constant = self.container_top(maxY: self.bounds.height)
-            self.layout_bottom.constant = self.container_down(minY: self.layout_top.constant)
-        }
-        
         NotificationCenter.default.addObserver(
             self, selector: #selector(keyboard_observer(_:)),
             name: .UIKeyboardWillChangeFrame,
             object: nil
         )
+    }
+    
+    /** */
+    override public func deploy_layout() {
+        self.layout_width.constant = self.container_width()
+        self.layout_top.constant = self.container_top(maxY: self.bounds.height)
+        self.layout_bottom.constant = self.container_down(minY: self.layout_top.constant)
+    }
+    
+    // MARK: - Action
+    
+    override func delegate_action() {
+        delegate?.inputView(self, save_action: text.text)
     }
     
     // MARK: - Animate

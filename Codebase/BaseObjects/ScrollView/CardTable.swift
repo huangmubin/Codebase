@@ -8,9 +8,25 @@
 
 import UIKit
 
+// MAKR: - Card Table DateSource
+
+public protocol CardTableDataSource: class {
+    
+    /** 获取数据 */
+    func cardTable(dataToCardAt index: Int) -> Any
+    
+}
+
+// MARK: - Card Table
+
 /** Card Tablt, use with Card View */ 
 public class CardTable: UIScrollView, UIScrollViewDelegate {
 
+    // MARK: - Delegate
+    
+    /** 数据源 */
+    weak var dataSource: CardTableDataSource?
+    
     // MARK: - Init
     
     override public init(frame: CGRect) {
@@ -86,9 +102,10 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
         }
         
         // Card
-        for card in cards {
+        for (i, card) in cards.enumerated() {
             addSubview(card)
             card.table = self
+            card.data = dataSource?.cardTable(dataToCardAt: i)
             card.reload()
         }
     }

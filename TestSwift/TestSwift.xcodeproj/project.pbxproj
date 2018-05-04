@@ -15,15 +15,17 @@
 		9C0F03DD2085DAFD008A7C96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C0F03DB2085DAFD008A7C96 /* LaunchScreen.storyboard */; };
 		9C0F03E82085DAFD008A7C96 /* TestSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F03E72085DAFD008A7C96 /* TestSwiftTests.swift */; };
 		9C0F03F32085DAFD008A7C96 /* TestSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0F03F22085DAFD008A7C96 /* TestSwiftUITests.swift */; };
+		9C18172C209C0BD500FBD419 /* Ex_UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18172B209C0BD500FBD419 /* Ex_UITextField.swift */; };
+		9C18172E209C3BE600FBD419 /* VarlenaInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18172D209C3BE600FBD419 /* VarlenaInput.swift */; };
+		9C181730209C3BF200FBD419 /* VarlenaInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C18172F209C3BF200FBD419 /* VarlenaInput.xib */; };
 		9C5E7B55208733AB00999A9C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E7B54208733AB00999A9C /* libsqlite3.tbd */; };
 		9C5F261B209328B70080E1DC /* CardTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F261A209328B70080E1DC /* CardTable.swift */; };
 		9C5F261D209328C10080E1DC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F261C209328C10080E1DC /* CardView.swift */; };
 		9C5F261F20934EE90080E1DC /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F261E20934EE90080E1DC /* Operator.swift */; };
+		9C7F2AC2209C09A9005B6A44 /* CardSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7F2AC1209C09A8005B6A44 /* CardSeparator.swift */; };
 		9C8FAE4D208F253200AB8CE7 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE24208F253200AB8CE7 /* Animation.swift */; };
 		9C8FAE4E208F253200AB8CE7 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE26208F253200AB8CE7 /* Button.swift */; };
 		9C8FAE4F208F253200AB8CE7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE27208F253200AB8CE7 /* ImageView.swift */; };
-		9C8FAE50208F253200AB8CE7 /* TableCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE29208F253200AB8CE7 /* TableCards.swift */; };
-		9C8FAE51208F253200AB8CE7 /* TableCardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE2A208F253200AB8CE7 /* TableCardsCell.swift */; };
 		9C8FAE52208F253200AB8CE7 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE2B208F253200AB8CE7 /* TableView.swift */; };
 		9C8FAE53208F253200AB8CE7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE2C208F253200AB8CE7 /* TableViewCell.swift */; };
 		9C8FAE54208F253200AB8CE7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE2D208F253200AB8CE7 /* View.swift */; };
@@ -85,15 +87,17 @@
 		9C0F03EE2085DAFD008A7C96 /* TestSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0F03F22085DAFD008A7C96 /* TestSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwiftUITests.swift; sourceTree = "<group>"; };
 		9C0F03F42085DAFD008A7C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C18172B209C0BD500FBD419 /* Ex_UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ex_UITextField.swift; path = ../UIKit/Ex_UITextField.swift; sourceTree = "<group>"; };
+		9C18172D209C3BE600FBD419 /* VarlenaInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarlenaInput.swift; sourceTree = "<group>"; };
+		9C18172F209C3BF200FBD419 /* VarlenaInput.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VarlenaInput.xib; sourceTree = "<group>"; };
 		9C5E7B54208733AB00999A9C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9C5F261A209328B70080E1DC /* CardTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTable.swift; sourceTree = "<group>"; };
 		9C5F261C209328C10080E1DC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9C5F261E20934EE90080E1DC /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		9C7F2AC1209C09A8005B6A44 /* CardSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSeparator.swift; sourceTree = "<group>"; };
 		9C8FAE24208F253200AB8CE7 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		9C8FAE26208F253200AB8CE7 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		9C8FAE27208F253200AB8CE7 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		9C8FAE29208F253200AB8CE7 /* TableCards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCards.swift; sourceTree = "<group>"; };
-		9C8FAE2A208F253200AB8CE7 /* TableCardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCardsCell.swift; sourceTree = "<group>"; };
 		9C8FAE2B208F253200AB8CE7 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		9C8FAE2C208F253200AB8CE7 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		9C8FAE2D208F253200AB8CE7 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		9C5F2619209328950080E1DC /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				9C7F2AC1209C09A8005B6A44 /* CardSeparator.swift */,
 				9C5F261A209328B70080E1DC /* CardTable.swift */,
 				9C5F261C209328C10080E1DC /* CardView.swift */,
 			);
@@ -266,8 +271,6 @@
 		9C8FAE28208F253200AB8CE7 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				9C8FAE29208F253200AB8CE7 /* TableCards.swift */,
-				9C8FAE2A208F253200AB8CE7 /* TableCardsCell.swift */,
 				9C8FAE2B208F253200AB8CE7 /* TableView.swift */,
 				9C8FAE2C208F253200AB8CE7 /* TableViewCell.swift */,
 			);
@@ -294,6 +297,7 @@
 		9C8FAE32208F253200AB8CE7 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				9C18172B209C0BD500FBD419 /* Ex_UITextField.swift */,
 				9C8FAE33208F253200AB8CE7 /* Ex_Array.swift */,
 				9C8FAE34208F253200AB8CE7 /* Ex_Calendar.swift */,
 				9C8FAE35208F253200AB8CE7 /* Ex_Date.swift */,
@@ -334,6 +338,8 @@
 				9C8FAE45208F253200AB8CE7 /* InputView.xib */,
 				9C8FAE43208F253200AB8CE7 /* InputTextView.swift */,
 				9C8FAE6C208F30A600AB8CE7 /* InputTextView.xib */,
+				9C18172D209C3BE600FBD419 /* VarlenaInput.swift */,
+				9C18172F209C3BF200FBD419 /* VarlenaInput.xib */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 			files = (
 				9C8FAE69208F253200AB8CE7 /* iSelector.xib in Resources */,
 				9C0F03DD2085DAFD008A7C96 /* LaunchScreen.storyboard in Resources */,
+				9C181730209C3BF200FBD419 /* VarlenaInput.xib in Resources */,
 				9C8FAE66208F253200AB8CE7 /* InputView.xib in Resources */,
 				9C0F03DA2085DAFD008A7C96 /* Assets.xcassets in Resources */,
 				9C8FAE6D208F30A600AB8CE7 /* InputTextView.xib in Resources */,
@@ -503,7 +510,6 @@
 				9C8FAE6B208F253200AB8CE7 /* Notifiable.swift in Sources */,
 				9C8FAE5D208F253200AB8CE7 /* Ex_String.swift in Sources */,
 				9C8FAE68208F253200AB8CE7 /* iSelector.swift in Sources */,
-				9C8FAE50208F253200AB8CE7 /* TableCards.swift in Sources */,
 				9C8FAE56208F253200AB8CE7 /* SQLite.swift in Sources */,
 				9C8FAE52208F253200AB8CE7 /* TableView.swift in Sources */,
 				9C8FAE53208F253200AB8CE7 /* TableViewCell.swift in Sources */,
@@ -514,9 +520,10 @@
 				9C8FAE55208F253200AB8CE7 /* ViewController.swift in Sources */,
 				9C8FAE64208F253200AB8CE7 /* InputTextView.swift in Sources */,
 				9C8FAE58208F253200AB8CE7 /* Ex_Calendar.swift in Sources */,
+				9C7F2AC2209C09A9005B6A44 /* CardSeparator.swift in Sources */,
 				9C5F261B209328B70080E1DC /* CardTable.swift in Sources */,
-				9C8FAE51208F253200AB8CE7 /* TableCardsCell.swift in Sources */,
 				9C8FAE5F208F253200AB8CE7 /* Ex_UIDevice.swift in Sources */,
+				9C18172E209C3BE600FBD419 /* VarlenaInput.swift in Sources */,
 				9C0F03D02085DAFD008A7C96 /* AppDelegate.swift in Sources */,
 				9C8FAE5A208F253200AB8CE7 /* Ex_DateFormatter.swift in Sources */,
 				9C8FAE57208F253200AB8CE7 /* Ex_Array.swift in Sources */,
@@ -526,6 +533,7 @@
 				9C8FAE61208F253200AB8CE7 /* Ex_UIScreen.swift in Sources */,
 				9C5F261F20934EE90080E1DC /* Operator.swift in Sources */,
 				9C5F261D209328C10080E1DC /* CardView.swift in Sources */,
+				9C18172C209C0BD500FBD419 /* Ex_UITextField.swift in Sources */,
 				9C0F03D82085DAFD008A7C96 /* TestSwift.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,7 +708,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2KGH4RWYPW;
+				DEVELOPMENT_TEAM = 8BBKEKP879;
 				INFOPLIST_FILE = "$(SRCROOT)/TestSwift/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -719,7 +727,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2KGH4RWYPW;
+				DEVELOPMENT_TEAM = 8BBKEKP879;
 				INFOPLIST_FILE = "$(SRCROOT)/TestSwift/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

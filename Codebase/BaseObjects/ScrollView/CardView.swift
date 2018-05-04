@@ -16,6 +16,11 @@ public class CardView: View {
     /** Cart Table */
     public weak var table: CardTable!
     
+    // MARK: - Data
+    
+    /** Data */
+    public var data: Any? = nil
+    
     // MARK: - identifier
     
     /** identifier */

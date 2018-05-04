@@ -188,16 +188,43 @@ public class InputView: UIView {
     // MARK: - Layout
     
     /**  */
-    @IBOutlet weak var layout_top: NSLayoutConstraint!
+    @IBOutlet weak var layout_top: NSLayoutConstraint! {
+        didSet {
+            if layout_center
+            != nil && layout_width != nil && layout_top != nil && layout_bottom != nil {
+                deploy_layout()
+            }
+        }
+    }
     /**  */
-    @IBOutlet weak var layout_bottom: NSLayoutConstraint!
+    @IBOutlet weak var layout_bottom: NSLayoutConstraint! {
+        didSet {
+            if layout_center
+                != nil && layout_width != nil && layout_top != nil && layout_bottom != nil {
+                deploy_layout()
+            }
+        }
+    }
     /**  */
-    @IBOutlet weak var layout_center: NSLayoutConstraint!
+    @IBOutlet weak var layout_center: NSLayoutConstraint! {
+        didSet {
+            if layout_center
+                != nil && layout_width != nil && layout_top != nil && layout_bottom != nil {
+                deploy_layout()
+            }
+        }
+    }
     /**  */
-    @IBOutlet weak var layout_width: NSLayoutConstraint!
+    @IBOutlet weak var layout_width: NSLayoutConstraint! {
+        didSet {
+            if layout_center
+                != nil && layout_width != nil && layout_top != nil && layout_bottom != nil {
+                deploy_layout()
+            }
+        }
+    }
     
-    
-    
-    
+    /**  */
+    public func deploy_layout() { }
     
 }
