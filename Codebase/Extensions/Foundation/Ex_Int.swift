@@ -20,4 +20,9 @@ extension Int {
     /**  */
     var cgfloat: CGFloat { return CGFloat(self) }
     
+    /** count a random in range, default is 0 ..< 101 */
+    public static func random(range: Range<Int> = 0 ..< 101) -> Int {
+        return Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound))) + range.lowerBound
+    }
+    
 }
