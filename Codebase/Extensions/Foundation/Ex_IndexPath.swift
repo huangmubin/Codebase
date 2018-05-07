@@ -13,7 +13,7 @@ extension IndexPath {
     
     /** 创建指向数组最后一个元素的坐标 */
     public init<T>(_ array: Array<T>, sec: Int = 0) {
-        self = IndexPath(row: array.count, section: sec)
+        self = IndexPath(row: array.count - 1, section: sec)
     }
     
 }

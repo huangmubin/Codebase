@@ -1,19 +1,15 @@
 //
-//  ViewController.swift
-//  TestSwift
+//  TableViewController.swift
+//  Daily
 //
-//  Created by Myron on 2018/4/17.
+//  Created by Myron on 2018/5/7.
 //  Copyright © 2018年 Myron. All rights reserved.
 //
 
 import UIKit
 
-/**
- 扩展 UIViewController
- 提供各种常用功能
- */
-public class ViewController: UIViewController {
-    
+class TableViewController: UITableViewController {
+
     // MARK: - View Life
     
     override public func viewDidLoad() {
@@ -127,7 +123,7 @@ public class ViewController: UIViewController {
         }
         if let navigation = self.navigationController {
             if let index = navigation.viewControllers.index(of: self) {
-                if index - 1 > 0 {
+                if index - 1 >= 0 {
                     if let controller = navigation.viewControllers[index-1] as? ViewController {
                         for (key, value) in object {
                             controller.messages[key] = value
@@ -149,29 +145,4 @@ public class ViewController: UIViewController {
     /** Override: Call when analysis messages function have value */
     public func controller_message(key: String, value: Any) { }
     
-}
-
-// MARK: - Tools
-
-extension ViewController {
-    
-    /** 当前屏幕最顶部的控制器 */
-    public class func top() -> UIViewController? {
-        func top(controller: UIViewController) -> UIViewController? {
-            if let navigation = controller as? UINavigationController {
-                return navigation.topViewController
-            } else if let tabbar = controller as? UITabBarController {
-                return tabbar.selectedViewController
-            } else {
-                return controller
-            }
-        }
-        
-        var top_controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
-        while top_controller?.presentedViewController != nil {
-            top_controller = top(controller: top_controller!.presentedViewController!)
-        }
-        return top_controller
-    }
-
 }

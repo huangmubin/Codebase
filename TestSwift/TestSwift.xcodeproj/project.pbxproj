@@ -18,6 +18,10 @@
 		9C18172C209C0BD500FBD419 /* Ex_UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18172B209C0BD500FBD419 /* Ex_UITextField.swift */; };
 		9C18172E209C3BE600FBD419 /* VarlenaInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18172D209C3BE600FBD419 /* VarlenaInput.swift */; };
 		9C181730209C3BF200FBD419 /* VarlenaInput.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C18172F209C3BF200FBD419 /* VarlenaInput.xib */; };
+		9C243DAD20A04A9E00D6A32A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C243DAC20A04A9E00D6A32A /* CalendarView.swift */; };
+		9C243DAF20A04AEB00D6A32A /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C243DAE20A04AEB00D6A32A /* CalendarView.xib */; };
+		9C243DB120A04AFF00D6A32A /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C243DB020A04AFF00D6A32A /* CalendarCell.xib */; };
+		9C243DB320A04B1D00D6A32A /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C243DB220A04B1D00D6A32A /* CalendarCell.swift */; };
 		9C5E7B55208733AB00999A9C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5E7B54208733AB00999A9C /* libsqlite3.tbd */; };
 		9C5F261B209328B70080E1DC /* CardTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F261A209328B70080E1DC /* CardTable.swift */; };
 		9C5F261D209328C10080E1DC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F261C209328C10080E1DC /* CardView.swift */; };
@@ -90,6 +94,10 @@
 		9C18172B209C0BD500FBD419 /* Ex_UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ex_UITextField.swift; path = ../UIKit/Ex_UITextField.swift; sourceTree = "<group>"; };
 		9C18172D209C3BE600FBD419 /* VarlenaInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarlenaInput.swift; sourceTree = "<group>"; };
 		9C18172F209C3BF200FBD419 /* VarlenaInput.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VarlenaInput.xib; sourceTree = "<group>"; };
+		9C243DAC20A04A9E00D6A32A /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		9C243DAE20A04AEB00D6A32A /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		9C243DB020A04AFF00D6A32A /* CalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
+		9C243DB220A04B1D00D6A32A /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		9C5E7B54208733AB00999A9C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9C5F261A209328B70080E1DC /* CardTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTable.swift; sourceTree = "<group>"; };
 		9C5F261C209328C10080E1DC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -215,6 +223,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		9C243DAB20A04A8800D6A32A /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				9C243DAC20A04A9E00D6A32A /* CalendarView.swift */,
+				9C243DB020A04AFF00D6A32A /* CalendarCell.xib */,
+				9C243DB220A04B1D00D6A32A /* CalendarCell.swift */,
+				9C243DAE20A04AEB00D6A32A /* CalendarView.xib */,
+			);
+			path = Calender;
+			sourceTree = "<group>";
+		};
 		9C5E7B53208733AB00999A9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +344,7 @@
 		9C8FAE41208F253200AB8CE7 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				9C243DAB20A04A8800D6A32A /* Calender */,
 				9C8FAE42208F253200AB8CE7 /* Input */,
 				9C8FAE46208F253200AB8CE7 /* Selector */,
 			);
@@ -470,10 +490,12 @@
 			files = (
 				9C8FAE69208F253200AB8CE7 /* iSelector.xib in Resources */,
 				9C0F03DD2085DAFD008A7C96 /* LaunchScreen.storyboard in Resources */,
+				9C243DB120A04AFF00D6A32A /* CalendarCell.xib in Resources */,
 				9C181730209C3BF200FBD419 /* VarlenaInput.xib in Resources */,
 				9C8FAE66208F253200AB8CE7 /* InputView.xib in Resources */,
 				9C0F03DA2085DAFD008A7C96 /* Assets.xcassets in Resources */,
 				9C8FAE6D208F30A600AB8CE7 /* InputTextView.xib in Resources */,
+				9C243DAF20A04AEB00D6A32A /* CalendarView.xib in Resources */,
 				9C0F03D52085DAFD008A7C96 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +550,7 @@
 				9C8FAE5A208F253200AB8CE7 /* Ex_DateFormatter.swift in Sources */,
 				9C8FAE57208F253200AB8CE7 /* Ex_Array.swift in Sources */,
 				9C8FAE4D208F253200AB8CE7 /* Animation.swift in Sources */,
+				9C243DB320A04B1D00D6A32A /* CalendarCell.swift in Sources */,
 				9C8FAE54208F253200AB8CE7 /* View.swift in Sources */,
 				9C8FAE5B208F253200AB8CE7 /* Ex_IndexPath.swift in Sources */,
 				9C8FAE61208F253200AB8CE7 /* Ex_UIScreen.swift in Sources */,
@@ -535,6 +558,7 @@
 				9C5F261D209328C10080E1DC /* CardView.swift in Sources */,
 				9C18172C209C0BD500FBD419 /* Ex_UITextField.swift in Sources */,
 				9C0F03D82085DAFD008A7C96 /* TestSwift.xcdatamodeld in Sources */,
+				9C243DAD20A04A9E00D6A32A /* CalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
