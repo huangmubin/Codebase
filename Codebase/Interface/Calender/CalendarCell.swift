@@ -8,11 +8,42 @@
 
 import UIKit
 
-class CalendarCell: UICollectionViewCell {
+public class CalendarCell: UICollectionViewCell {
+    
+    // MARK: - Data
+    
+    public var index: IndexPath!
+    public var date: Date!
+    
+    // MARK: - SubView
+    
+    /** 日期 */
+    @IBOutlet weak var day: UILabel!
+    /** 背景 */
+    @IBOutlet weak var back: View!
+    /** 选中状态 */
+    @IBOutlet weak var select: View!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Size
+    
+    override public var frame: CGRect {
+        didSet{
+            if frame.size != oldValue.size {
+                view_bounds()
+            }
+        }
     }
-
+    override public var bounds: CGRect {
+        didSet {
+            if bounds.size != oldValue.size {
+                view_bounds()
+            }
+        }
+    }
+    
+    /** 大小变化 */
+    public func view_bounds() {
+        select.corner = select.bounds.width / 2
+    }
+    
 }

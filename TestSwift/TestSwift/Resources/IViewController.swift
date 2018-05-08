@@ -17,8 +17,8 @@ class IViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let v = VarlenaInput.load(nib: nil) {
-            v.frame = CGRect(x: 0, y: 20, width: view.bounds.width, height: 300)
+        if let v = CalendarView.load(nib: nil) {
+            v.frame = CGRect(x: 0, y: 50, width: view.bounds.width, height: 500)
             view.addSubview(v)
         }
     }

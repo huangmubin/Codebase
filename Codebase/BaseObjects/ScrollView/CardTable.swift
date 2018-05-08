@@ -20,7 +20,7 @@ public protocol CardTableDataSource: class {
 // MARK: - Card Table
 
 /** Card Tablt, use with Card View */ 
-public class CardTable: UIScrollView, UIScrollViewDelegate {
+public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
     // MARK: - Delegate
     
@@ -43,6 +43,7 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
     public func view_deploy() {
         delegate = self
         tap = UITapGestureRecognizer(target: self, action: #selector(tap_gesture(_:)))
+        tap.delegate = self
         addGestureRecognizer(tap)
     }
     
@@ -55,6 +56,11 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
     
     /** Cards */
     @IBOutlet public var cards: [CardView] = []
+    
+    /** Find Cards */
+    public func card(id: String) -> CardView? {
+        return cards.find(condition: { $0.identifier == id })
+    }
     
     // MARK: - Separator
     
@@ -210,5 +216,22 @@ public class CardTable: UIScrollView, UIScrollViewDelegate {
             }
         }
     }
+    
+    // MARK: - UIGestureRecognizerDelegate
+    
+    /** Check is Touch Cell or not */
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        var view = touch.view
+        while view != nil {
+            switch view {
+            case is UICollectionViewCell, is UITableViewCell:
+                return false
+            default:
+                view = view?.superview
+            }
+        }
+        return true
+    }
+    
     
 }

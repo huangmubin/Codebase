@@ -32,12 +32,12 @@ public class iDateSelector: UIView {
         minute: Int? = nil,
         second: Int? = nil
         ) -> Date {
-        let ye = year ?? self.year.int
-        let mo = month ?? self.month.int
-        let da = day ?? self.day.int
-        let ho = hour ?? self.hour.int
-        let mi = minute ?? self.minute.int
-        let se = second ?? self.second.int
+        let ye = year ?? (self.year?.int ?? 2018)
+        let mo = month ?? (self.month?.int ?? 1)
+        let da = day ?? (self.day?.int ?? 1)
+        let ho = hour ?? (self.hour?.int ?? 0)
+        let mi = minute ?? (self.minute?.int ?? 0)
+        let se = second ?? (self.second?.int ?? 0)
         return DateFormatter("yyyy-M-d H:m:s").date(from: "\(ye)-\(mo)-\(da) \(ho):\(mi):\(se)") ?? Date()
     }
     

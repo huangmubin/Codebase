@@ -227,9 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				9C243DAC20A04A9E00D6A32A /* CalendarView.swift */,
-				9C243DB020A04AFF00D6A32A /* CalendarCell.xib */,
 				9C243DB220A04B1D00D6A32A /* CalendarCell.swift */,
 				9C243DAE20A04AEB00D6A32A /* CalendarView.xib */,
+				9C243DB020A04AFF00D6A32A /* CalendarCell.xib */,
 			);
 			path = Calender;
 			sourceTree = "<group>";
