@@ -14,13 +14,13 @@ public class iDateSelector: UIView {
     // MARK: - Update
     
     /** update the iSelectors */
-    public func update(date: Date) {
-        year?.scroll(data: date.year.description, animate: true)
-        month?.scroll(data: date.month.description, animate: true)
-        day?.scroll(data: date.day.description, animate: true)
-        hour?.scroll(data: date.hour.description, animate: true)
-        minute?.scroll(data: date.minute.description, animate: true)
-        second?.scroll(data: date.second.description, animate: true)
+    public func update(date: Date, animate: Bool = true) {
+        year?.scroll(data: date.year.description, animate: animate)
+        month?.scroll(data: date.month.description, animate: animate)
+        day?.scroll(data: date.day.description, animate: animate)
+        hour?.scroll(data: date.hour.description, animate: animate)
+        minute?.scroll(data: date.minute.description, animate: animate)
+        second?.scroll(data: date.second.description, animate: animate)
     }
     
     /** Get the date */

@@ -120,11 +120,13 @@ public class ViewController: UIViewController {
     
     /** Send message to the Super Controller (presentingViewController) */
     public func toSuperController(object: [String: Any]) {
+        // Normal
         if let controller = self.presentingViewController as? ViewController {
             for (key, value) in object {
                 controller.messages[key] = value
             }
         }
+        // Navigation controller
         if let navigation = self.navigationController {
             if let index = navigation.viewControllers.index(of: self) {
                 if index - 1 > 0 {
@@ -132,6 +134,21 @@ public class ViewController: UIViewController {
                         for (key, value) in object {
                             controller.messages[key] = value
                         }
+                    }
+                }
+            }
+        }
+        // Tabbar's Sub controller
+        if let tabbar = self.presentingViewController as? UITabBarController {
+            if let controller = tabbar.selectedViewController as? ViewController {
+                for (key, value) in object {
+                    controller.messages[key] = value
+                }
+            }
+            if let navigation = tabbar.selectedViewController as? UINavigationController {
+                if let controller = navigation.viewControllers.last as? ViewController {
+                    for (key, value) in object {
+                        controller.messages[key] = value
                     }
                 }
             }
