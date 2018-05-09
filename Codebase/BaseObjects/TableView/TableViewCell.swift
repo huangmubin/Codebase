@@ -32,6 +32,9 @@ public class TableViewCell: UITableViewCell {
     
     /** Cell Index Path */
     public var index: IndexPath!
+    
+    // MARK: Controller
+    
     /** Cell's tableview's controller */
     public weak var controller: ViewController?
     
@@ -39,6 +42,22 @@ public class TableViewCell: UITableViewCell {
     public func view_update(index: IndexPath, controller: ViewController?) {
         self.index = index
         self.controller = controller
+        if !is_loaded {
+            view_load()
+            is_loaded = true
+        }
+        view_reload()
+    }
+    
+    // MARK: View
+    
+    /** Cell's tableview's view */
+    public weak var view: UIView?
+    
+    /** Cell Update */
+    public func view_update(index: IndexPath, view: UIView?) {
+        self.index = index
+        self.view = view
         if !is_loaded {
             view_load()
             is_loaded = true
@@ -60,6 +79,15 @@ public class TableViewCell: UITableViewCell {
 // MARK: - Extension View Controller
 
 extension UIViewController {
+    
+    /** Override in UIViewController to receive TableViewCell's massage */
+    public func tableView(cell: TableViewCell, user action: String, value: Any? = nil) { }
+    
+}
+
+// MARK: - Extension View
+
+extension UIView {
     
     /** Override in UIViewController to receive TableViewCell's massage */
     public func tableView(cell: TableViewCell, user action: String, value: Any? = nil) { }

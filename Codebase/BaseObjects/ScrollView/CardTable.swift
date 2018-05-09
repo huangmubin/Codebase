@@ -45,6 +45,7 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
         tap = UITapGestureRecognizer(target: self, action: #selector(tap_gesture(_:)))
         tap.delegate = self
         addGestureRecognizer(tap)
+        keyboard_observer()
     }
     
     // MARK: - Controller
@@ -181,6 +182,12 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
     
     // MARK: - UIScrollViewDelegate
     
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        for card in cards {
+            card.scroll_begin_dragging_action()
+        }
+    }
+    
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let min = scrollView.contentOffset.y
         let max = min + scrollView.bounds.height
@@ -217,21 +224,87 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
         }
     }
     
+    // MARK: - Touch
+    
+    /** is user touch or not */
+    public var is_touch: Bool = false
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        is_touch = true
+    }
+    
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        is_touch = false
+    }
+    
     // MARK: - UIGestureRecognizerDelegate
     
     /** Check is Touch Cell or not */
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        var view = touch.view
-        while view != nil {
-            switch view {
-            case is UICollectionViewCell, is UITableViewCell:
-                return false
-            default:
-                view = view?.superview
+        if gestureRecognizer === tap {
+            var view = touch.view
+            while view != nil {
+                switch view {
+                case is UICollectionViewCell, is UITableViewCell:
+                    return false
+                default:
+                    view = view?.superview
+                }
             }
         }
         return true
     }
     
+    // MARK: - Keyboard
+    
+    /** Is it listion the keyboard changed. */
+    @IBInspectable public var keyboard: Bool = true {
+        didSet {
+            keyboard_observer()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    public func keyboard_observer() {
+        if keyboard {
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(keyboard_will_change_frame(_:)),
+                name: .UIKeyboardWillChangeFrame,
+                object: nil
+            )
+        } else {
+            NotificationCenter.default.removeObserver(self)
+        }
+    }
+    
+    
+    @objc func keyboard_will_change_frame(_ notification: Notification) {
+        if let info = notification.userInfo {
+            if let rect = info[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+                self.keyboard_will_change_frame(keyboard: rect.cgRectValue)
+            }
+        }
+    }
+    
+    /** keyboard will change to the new rect, default change the contentoffset */
+    public func keyboard_will_change_frame(keyboard rect: CGRect) {
+        if rect.minY < UIScreen.main.bounds.height {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.contentOffset.y += rect.height
+                self.contentInset.bottom += rect.height
+            })
+        } else {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.contentOffset.y -= rect.height
+                self.contentInset.bottom -= rect.height
+            })
+        }
+    }
     
 }

@@ -55,6 +55,9 @@ public class CardView: View {
     /** Override: Scroll Action, Call when appear and scroll. */
     public func scroll_action() {}
     
+    /** Override: Scroll Action, Call when appear and scroll. */
+    public func scroll_begin_dragging_action() {}
+    
     // MARK: - Gesture
     
     /** Override: Tap Select */
