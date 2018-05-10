@@ -163,7 +163,7 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
         let separator_height = (separator == nil ? 0 : (CGFloat(cards.count) * separator!.frame.height))
         contentSize.width = bounds.width
         contentSize.height = cards.count(value: {$0.bounds.height}) + (edge.top + edge.bottom) * CGFloat(cards.count) + separator_height
-        var y: CGFloat = 0
+        var y: CGFloat = edge.top
         for (i, card) in cards.enumerated() {
             card.frame = CGRect(
                 x: edge.left, y: y,
@@ -215,28 +215,12 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
     
     /**  */
     @objc public func tap_gesture(_ sender: UITapGestureRecognizer) {
-        var point = sender.location(in: self)
-        point.y += contentOffset.y
+        let point = sender.location(in: self)
         for card in cards {
             if card.appear && card.frame.minY < point.y && card.frame.maxY > point.y {
                 card.tap_gesture(sender)
             }
         }
-    }
-    
-    // MARK: - Touch
-    
-    /** is user touch or not */
-    public var is_touch: Bool = false
-    
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        is_touch = true
-    }
-    
-    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        is_touch = false
     }
     
     // MARK: - UIGestureRecognizerDelegate
@@ -296,13 +280,11 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
     public func keyboard_will_change_frame(keyboard rect: CGRect) {
         if rect.minY < UIScreen.main.bounds.height {
             UIView.animate(withDuration: 0.25, animations: {
-                self.contentOffset.y += rect.height
-                self.contentInset.bottom += rect.height
+                self.contentInset.bottom = rect.height
             })
         } else {
             UIView.animate(withDuration: 0.25, animations: {
-                self.contentOffset.y -= rect.height
-                self.contentInset.bottom -= rect.height
+                self.contentInset.bottom = 0
             })
         }
     }

@@ -63,5 +63,4 @@ public class CardView: View {
     /** Override: Tap Select */
     public func tap_gesture(_ sender: UITapGestureRecognizer) {}
     
-    
 }

@@ -43,7 +43,7 @@ public class CalendarCell: UICollectionViewCell {
     
     /** 大小变化 */
     public func view_bounds() {
-        select.corner = select.bounds.width / 2
+        self.select.corner = min(self.bounds.width, self.bounds.height) / 2 - 5
     }
     
 }

@@ -69,9 +69,10 @@ public class CalendarView: View, UICollectionViewDataSource, UICollectionViewDel
         super.view_bounds()
         layoutIfNeeded()
         size = CGSize(
-            width: (days.bounds.width - 6) / 7,
-            height: (days.bounds.height - 5) / 6
+            width: (days.bounds.width - 9) / 7,
+            height: (days.bounds.height - 7.5) / 6
         )
+        print("wize = \(size.width); days = \(days.bounds.width); co = \(size.width * 7)")
         print("size = \(size.height); days = \(days.bounds.height); co = \(size.height * 6)")
         days.reloadData()
     }
