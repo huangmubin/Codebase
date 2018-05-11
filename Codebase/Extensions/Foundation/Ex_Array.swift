@@ -35,3 +35,28 @@ extension Array {
     }
     
 }
+
+// MARK: - 快速交换位置
+
+extension Array {
+    
+    /** 快速交换两个元素的位置 */
+    public mutating func change(source: Int, destination: Int) {
+        if source != destination {
+            let a = Swift.min(source, destination)
+            let b = Swift.max(source, destination)
+            let item_a = self.remove(at: a)
+            self.insert(item_a, at: b)
+            let item_b = self.remove(at: b-1)
+            self.insert(item_b, at: a)
+        }
+    }
+    
+    public mutating func move(source: Int, destination: Int) {
+        if source != destination {
+            let item = self.remove(at: source)
+            self.insert(item, at: (source > destination) ? destination : (destination - 1))
+        }
+    }
+    
+}

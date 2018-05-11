@@ -8,13 +8,11 @@
 
 import UIKit
 
-// MAKR: - Card Table DateSource
+// MARK: - Card Table DateSource
 
 public protocol CardTableDataSource: class {
-    
     /** 获取数据 */
     func cardTable(dataToCardAt index: Int) -> Any
-    
 }
 
 // MARK: - Card Table
