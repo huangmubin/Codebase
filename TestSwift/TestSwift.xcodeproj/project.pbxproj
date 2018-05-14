@@ -57,6 +57,7 @@
 		9C8FAE6A208F253200AB8CE7 /* NibLoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE4B208F253200AB8CE7 /* NibLoable.swift */; };
 		9C8FAE6B208F253200AB8CE7 /* Notifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8FAE4C208F253200AB8CE7 /* Notifiable.swift */; };
 		9C8FAE6D208F30A600AB8CE7 /* InputTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C8FAE6C208F30A600AB8CE7 /* InputTextView.xib */; };
+		9CB611FF20A9702700F13C94 /* KeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB611FE20A9702700F13C94 /* KeyValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		9C8FAE4B208F253200AB8CE7 /* NibLoable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoable.swift; sourceTree = "<group>"; };
 		9C8FAE4C208F253200AB8CE7 /* Notifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifiable.swift; sourceTree = "<group>"; };
 		9C8FAE6C208F30A600AB8CE7 /* InputTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTextView.xib; sourceTree = "<group>"; };
+		9CB611FE20A9702700F13C94 /* KeyValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +382,7 @@
 				9C8FAE4B208F253200AB8CE7 /* NibLoable.swift */,
 				9C8FAE4C208F253200AB8CE7 /* Notifiable.swift */,
 				9C5F261E20934EE90080E1DC /* Operator.swift */,
+				9CB611FE20A9702700F13C94 /* KeyValue.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				9C8FAE55208F253200AB8CE7 /* ViewController.swift in Sources */,
 				9C8FAE64208F253200AB8CE7 /* InputTextView.swift in Sources */,
 				9C8FAE58208F253200AB8CE7 /* Ex_Calendar.swift in Sources */,
+				9CB611FF20A9702700F13C94 /* KeyValue.swift in Sources */,
 				9C7F2AC2209C09A9005B6A44 /* CardSeparator.swift in Sources */,
 				9C5F261B209328B70080E1DC /* CardTable.swift in Sources */,
 				9C8FAE5F208F253200AB8CE7 /* Ex_UIDevice.swift in Sources */,
