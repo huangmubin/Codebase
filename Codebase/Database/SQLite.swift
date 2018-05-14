@@ -360,6 +360,90 @@ public class SQLite {
         return String(validatingUTF8:sqlite3_errmsg(db)) ?? ""
     }
     
+}
+
+// MARK: - SQLite Protocol
+
+public protocol SQLiteProtocol {
+    
+    /** id */
+    var id: Int { get set }
+    
+    /** Table name */
+    static var table: String { get set }
+    
+    /** Create:
+         create table if not exists \(table) (
+            id integer primary key,
+            name text,
+            type integer
+         );
+     */
+    @discardableResult static func create() -> Bool
+    
+    /** Find:
+        select * from \(table)[ where something];
+     var habits = [Habit]()
+     SQLite.default.find(sql: sql, line: { Habit() }, datas: { (state, i, obj, name) in
+         switch name {
+         case "id":
+         obj.id = Int(sqlite3_column_int64(state, i))
+         case "name":
+         obj.name = String(cString: sqlite3_column_text(state, i))
+         default: break
+         }
+     }, next: { habits.append($0) })
+     return habits
+     */
+    static func find(sql: String) -> [Self]
+    
+    /** Insert:
+     insert into \(table) values(0, 'text');
+     */
+    @discardableResult func insert() -> Bool
+    
+    /** Update:
+     update \(table) set name = '\(name)' where id = \(id);
+     */
+    @discardableResult func update() -> Bool
+    
+}
+
+extension SQLiteProtocol {
+    
+    /** table name */
+    var table: String { return Self.table }
+    
+    /** Execut */
+    static func execut(sql: String) -> Bool {
+        return SQLite.default.execut(sql: sql)
+    }
+    
+    /** Execut */
+    func execut(sql: String) -> Bool {
+        return SQLite.default.execut(sql: sql)
+    }
+    
+    /** Find */
+    static func find(where value: String? = nil) -> [Self] {
+        var sql = "select * from \(table)"
+        if let v = value {
+            sql += " where \(v);"
+        } else {
+            sql += ";"
+        }
+        return find(sql: sql)
+    }
+    
+    /** update */
+    @discardableResult func update(_ values: String) -> Bool {
+        return execut(sql: "update \(table) set \(values) where id = \(id);")
+    }
+    
+    /** Delete */
+    func delete() -> Bool {
+        return execut(sql: "delete from \(table) where id = \(id);")
+    }
     
 }
 
