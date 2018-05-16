@@ -9,19 +9,17 @@
 import SQLite3
 import UIKit
 
-
-
 // MARK: - Protocol
 
 protocol SQLiteProtocol: Codable {
-    /** id */
-    var id: Int { get set }
+    /** Init */
+    init()
     
     /** table name */
     static var table: String { get set }
     
-    /** Init */
-    init()
+    /** id */
+    var id: Int { get set }
 }
 
 // MARK: - Infos
@@ -61,6 +59,7 @@ extension SQLiteProtocol {
             }
             UserDefaults.standard.set(cols, forKey: "\(table)_create_keys")
             UserDefaults.standard.set(types, forKey: "\(table)_create_types")
+            print("Save \(table)_create_keys: \(cols); \(types)")
             return cols
         }
     }

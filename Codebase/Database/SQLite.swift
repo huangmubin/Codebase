@@ -362,63 +362,6 @@ public class SQLite {
     
 }
 
-// MARK: - Sqlite Protocol 2
-
-
-extension SQLite {
-    
-    func find<T: SQLiteProtocol2>(sql: String, create: () -> T, next: (T) -> Void) {
-        objc_sync_enter(self)
-        
-        if db == nil {
-            output("execut db open faild - \(sql);")
-            objc_sync_exit(self)
-            return
-        }
-        
-        guard let c_sql = sql.cString(using: .utf8) else {
-            output("execut c_sql faild - \(sql);")
-            objc_sync_exit(self)
-            return
-        }
-        
-        // 执行检查
-        var statement: OpaquePointer? = nil
-        
-        // 检查语句
-        if sqlite3_prepare_v2(db, c_sql, -1, &statement, nil) != SQLITE_OK {
-            output("find faild - \(sql) - Error: \(self.error);")
-        } else { // 执行查询
-            while sqlite3_step(statement) == SQLITE_ROW { // 遍历每一行
-                let columns = sqlite3_column_count(statement)
-                let obj = create()
-                for i in 0 ..< columns { // 遍历每一列
-                    let type = sqlite3_column_type(statement, i)
-                    let chars = UnsafePointer<CChar>(sqlite3_column_name(statement, i))!
-                    let name = String(cString: chars, encoding: .utf8)!
-                    
-                    var value: Any
-                    switch type {
-                    case SQLITE_INTEGER: value = sqlite3_column_int(statement, i)
-                    case SQLITE_FLOAT:   value = sqlite3_column_double(statement, i)
-                    case SQLITE_TEXT:    value = String(cString: UnsafePointer<CUnsignedChar>(sqlite3_column_text(statement, i)))
-                    case SQLITE_BLOB:    value = Data(bytes: sqlite3_column_blob(statement, i), count: Int(sqlite3_column_bytes(statement, i)))
-                    default:             value = ""
-                    }
-                    obj.set(value: value, to: name)
-                }
-                next(obj)
-            }
-        }
-        sqlite3_finalize(statement)
-        
-        output("find success - \(sql);")
-        objc_sync_exit(self)
-    }
-    
-}
-
-
 
 // MARK: - SQL 语句示例
 
