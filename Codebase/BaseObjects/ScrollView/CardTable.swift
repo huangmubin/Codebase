@@ -51,6 +51,11 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
     /** Self's Controller */
     public weak var controller: UIViewController?
     
+    /** View Controller */
+    public var vc: ViewController? {
+        return controller as? ViewController
+    }
+    
     // MARK: - Cards
     
     /** Cards */

@@ -166,6 +166,12 @@ public class ViewController: UIViewController {
     /** Override: Call when analysis messages function have value */
     public func controller_message(key: String, value: Any) { }
     
+    // MARK: - Gesture
+    
+    func gestureRecognizerView(_ gesture: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+    }
+    
 }
 
 // MARK: - Tools
