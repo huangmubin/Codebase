@@ -27,4 +27,13 @@ extension UIColor {
         )
     }
     
+    /** 16进制初始化 */
+    public convenience init(_ value: Int, _ alpha: CGFloat = 1) {
+        self.init(
+            red: CGFloat((UInt(value) & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((UInt(value) & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat((UInt(value) & 0x0000FF)) / 255.0,
+            alpha: alpha
+        )
+    }
 }
