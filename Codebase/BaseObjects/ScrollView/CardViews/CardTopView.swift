@@ -23,7 +23,9 @@ public class CardTopView: CardView {
         cancel_action()
     }
     /** Override: left action */
-    public func cancel_action() { }
+    public func cancel_action() {
+        self.table.controller?.dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Right
     
