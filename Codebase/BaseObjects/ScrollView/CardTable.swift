@@ -66,6 +66,15 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
         return cards.find(condition: { $0.identifier == id })
     }
     
+    /** Remove cards */
+    @discardableResult
+    public func card(remove: String) -> CardView? {
+        if let i = cards.index(where: { $0.identifier == remove }) {
+            return cards.remove(at: i)
+        }
+        return nil
+    }
+    
     // MARK: - Separator
     
     /** Separator: default nil, if no, will add between card */
