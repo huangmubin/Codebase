@@ -94,17 +94,17 @@ public class Button: UIButton {
     
     /**  */
     public var is_normal: Bool {
-        return status == .normal
+        get { return status == .normal }
     }
     
     /**  */
     public var is_selected: Bool {
-        return status == .selected
+        get { return status == .selected }
     }
     
     /**  */
     public var is_invalid: Bool {
-        return status == .invalid
+        get { return status == .invalid }
     }
     
     // MARK: - Color Value
