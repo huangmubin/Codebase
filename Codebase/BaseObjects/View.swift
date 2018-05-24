@@ -59,6 +59,11 @@ public class View: UIView {
     
     // MARK: - Init
     
+    init() {
+        super.init(frame: CGRect.zero)
+        view_deploy()
+    }
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         view_deploy()
@@ -91,4 +96,19 @@ public class View: UIView {
     
     /** 大小变化 */
     public func view_bounds() { }
+    
+    // MARK: - Controller
+    
+    /** 获取自身的 Controller */
+    public func controller() -> UIViewController? {
+        var reponder: UIResponder? = self.next
+        while reponder != nil {
+            if let c = next as? UIViewController {
+                return c
+            }
+            reponder = reponder?.next
+        }
+        return nil
+    }
+    
 }

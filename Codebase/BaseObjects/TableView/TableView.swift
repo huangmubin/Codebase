@@ -8,8 +8,7 @@
 
 import UIKit
 
-
 /** Table View 特殊方法 */
-public class TableView: UITableView, UIGestureRecognizerDelegate {
+public class TableView: UITableView {
     
 }
