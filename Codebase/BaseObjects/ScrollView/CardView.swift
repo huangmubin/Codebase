@@ -11,6 +11,12 @@ import UIKit
 /** Card View, Use in Card Table */
 public class CardView: View {
 
+    // MARK: - Init
+    
+    convenience init(height: CGFloat) {
+        self.init(frame: CGRect(x: 0, y: 0, width: 300, height: height))
+    }
+    
     // MARK: - Table
     
     /** Cart Table */
