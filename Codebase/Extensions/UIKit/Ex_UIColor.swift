@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: - Init
+// MARK: - Int -> Color
 
 extension UIColor {
     
@@ -36,4 +36,23 @@ extension UIColor {
             alpha: alpha
         )
     }
+}
+
+// MARK: - Color -> Int
+
+extension UIColor {
+    
+    /** 获取颜色的色值 */
+    public func number() -> Int {
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        let r_u = UInt(r * 255) << 16
+        let g_u = UInt(g * 255) << 8
+        let b_u = UInt(b * 255)
+        return Int(r_u + g_u + b_u)
+    }
+    
 }
