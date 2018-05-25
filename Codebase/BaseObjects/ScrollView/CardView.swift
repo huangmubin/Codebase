@@ -13,8 +13,12 @@ public class CardView: View {
 
     // MARK: - Init
     
-    convenience init(height: CGFloat) {
-        self.init(frame: CGRect(x: 0, y: 0, width: 300, height: height))
+    /** default init */
+    convenience init(height: CGFloat?) {
+        self.init(frame: CGRect(x: 0, y: 0, width: 300, height: height ?? 80))
+        if height == nil && default_height != 80 {
+            self.frame.size.height = default_height
+        }
     }
     
     // MARK: - Table
@@ -26,6 +30,9 @@ public class CardView: View {
     
     /** Data */
     public var data: Any? = nil
+    
+    /** default height */
+    public var default_height: CGFloat { return 80 }
     
     // MARK: - identifier
     
