@@ -28,6 +28,26 @@ public class TableViewCell: UITableViewCell {
     /** View Deploy */
     public func view_deploy() { }
     
+    // MARK: - Size
+    
+    override public var frame: CGRect {
+        didSet{
+            if frame.size != oldValue.size {
+                view_bounds()
+            }
+        }
+    }
+    override public var bounds: CGRect {
+        didSet {
+            if bounds.size != oldValue.size {
+                view_bounds()
+            }
+        }
+    }
+    
+    /** 大小变化 */
+    public func view_bounds() { }
+    
     // MARK: - Massage
     
     /** Cell Index Path */
