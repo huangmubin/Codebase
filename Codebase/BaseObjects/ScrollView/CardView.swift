@@ -21,6 +21,12 @@ public class CardView: View {
         }
     }
     
+    /** default init */
+    convenience init(id: String, height: CGFloat) {
+        self.init(frame: CGRect(x: 0, y: 0, width: 300, height: height))
+        self.identifier = id
+    }
+    
     // MARK: - Table
     
     /** Cart Table */

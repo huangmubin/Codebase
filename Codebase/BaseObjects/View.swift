@@ -103,7 +103,7 @@ public class View: UIView {
     public func controller() -> UIViewController? {
         var reponder: UIResponder? = self.next
         while reponder != nil {
-            if let c = next as? UIViewController {
+            if let c = reponder?.next as? UIViewController {
                 return c
             }
             reponder = reponder?.next
