@@ -19,12 +19,14 @@ public class CardView: View {
         if height == nil && default_height != 80 {
             self.frame.size.height = default_height
         }
+        clipsToBounds = true
     }
     
     /** default init */
     convenience init(id: String, height: CGFloat) {
         self.init(frame: CGRect(x: 0, y: 0, width: 300, height: height))
         self.identifier = id
+        clipsToBounds = true
     }
     
     // MARK: - Table
@@ -38,7 +40,10 @@ public class CardView: View {
     public var data: Any? = nil
     
     /** default height */
-    public var default_height: CGFloat { return 80 }
+    public var default_height: CGFloat = 80
+    
+    /** default space */
+    public var space_edge: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
     // MARK: - identifier
     

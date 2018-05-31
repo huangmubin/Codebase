@@ -174,15 +174,17 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
     public func update_content_size() {
         let separator_height = (separator == nil ? 0 : (CGFloat(cards.count) * separator!.frame.height))
         contentSize.width = bounds.width
-        contentSize.height = cards.count(value: {$0.bounds.height}) + (edge.top + edge.bottom) * CGFloat(cards.count) + separator_height
+        contentSize.height = cards.count(value: { $0.bounds.height + $0.space_edge.top + $0.space_edge.bottom }) + (edge.top + edge.bottom) * CGFloat(cards.count) + separator_height
         var y: CGFloat = edge.top
         for (i, card) in cards.enumerated() {
+            y += card.space_edge.top
             card.frame = CGRect(
-                x: edge.left, y: y,
-                width: bounds.width - edge.left - edge.right,
+                x: edge.left + card.space_edge.left, y: y,
+                width: bounds.width - edge.left - edge.right - card.space_edge.left - card.space_edge.right,
                 height: card.frame.height
             )
             card.update_location()
+            y += card.space_edge.bottom
             y = y + card.frame.height + edge.top + edge.bottom
             if let line = separators.find(condition: { $0.tag == i }) {
                 line.frame.origin.y = y
