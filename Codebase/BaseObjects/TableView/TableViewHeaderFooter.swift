@@ -70,5 +70,25 @@ public class TableViewHeaderFooter: UITableViewHeaderFooterView {
     public func view_load() { }
     /** */
     public func view_reload() { }
+    
+    // MARK: - Size
+    
+    override public var frame: CGRect {
+        didSet{
+            if frame.size != oldValue.size {
+                view_bounds()
+            }
+        }
+    }
+    override public var bounds: CGRect {
+        didSet {
+            if bounds.size != oldValue.size {
+                view_bounds()
+            }
+        }
+    }
+    
+    /** 大小变化 */
+    public func view_bounds() { }
 
 }
