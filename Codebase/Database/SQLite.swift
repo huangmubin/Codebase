@@ -48,6 +48,9 @@ public class SQLite {
         }
     }
     
+    /** Logs Datebase */
+    public var log: SQLiteLogsControl?
+    
     // MARK: - Open
     
     /** 打开数据库，如果不存在就创建它。 */
@@ -119,6 +122,19 @@ public class SQLite {
             output("execut faild - \(sql) - Error: \(self.error);")
             objc_sync_exit(self)
             return false
+        }
+        
+        /** Log */
+        if let log = self.log {
+            if !sql.contains(SQLiteLogs.table) {
+                log.insert(sql: sql)
+                output("execut success - \(sql);")
+                objc_sync_exit(self)
+                return true
+            } else {
+                objc_sync_exit(self)
+                return true
+            }
         }
         
         output("execut success - \(sql);")

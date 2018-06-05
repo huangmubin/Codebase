@@ -59,7 +59,7 @@ extension SQLiteProtocol {
             }
             UserDefaults.standard.set(cols, forKey: "\(table)_create_keys")
             UserDefaults.standard.set(types, forKey: "\(table)_create_types")
-            print("Save \(table)_create_keys: \(cols); \(types)")
+            //print("Save \(table)_create_keys: \(cols); \(types)")
             return cols
         }
     }

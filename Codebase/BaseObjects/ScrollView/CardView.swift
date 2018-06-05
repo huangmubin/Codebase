@@ -42,7 +42,7 @@ public class CardView: View {
     /** default height */
     public var default_height: CGFloat = 80
     
-    /** default space */
+    /** default space, the card and the scroll view space */
     public var space_edge: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
     // MARK: - identifier
