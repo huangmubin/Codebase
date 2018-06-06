@@ -74,6 +74,11 @@ public class View: UIView {
         view_deploy()
     }
     
+    public convenience init(corner: CGFloat) {
+        self.init()
+        self.layer.cornerRadius = corner
+    }
+    
     /** 初始化 */
     public func view_deploy() { }
     
