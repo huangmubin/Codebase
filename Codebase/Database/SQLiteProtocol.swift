@@ -115,16 +115,25 @@ extension SQLiteProtocol {
     
     /** Create the Object Sqlite table */
     @discardableResult static func create() -> Bool {
-        var sql = "create table if not exists \(table) ("
-        let keys = Self.keys()
-        let type = Self.types()
-        for i in 0 ..< keys.count {
-            sql += "\(keys[i]) \(type[i]), "
+        if UserDefaults.standard.bool(forKey: "SQLite.create.Databases.\(table)") {
+            return true
+        } else {
+            var sql = "create table if not exists \(table) ("
+            let keys = Self.keys()
+            let type = Self.types()
+            for i in 0 ..< keys.count {
+                sql += "\(keys[i]) \(type[i]), "
+            }
+            sql.removeLast()
+            sql.removeLast()
+            sql += ");"
+            if execut(sql: sql) {
+                UserDefaults.standard.set(true, forKey: "SQLite.create.Databases.\(table)")
+                return true
+            } else {
+                return false
+            }
         }
-        sql.removeLast()
-        sql.removeLast()
-        sql += ");"
-        return execut(sql: sql)
     }
     
 }

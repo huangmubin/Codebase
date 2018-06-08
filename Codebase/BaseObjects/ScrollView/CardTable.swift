@@ -121,8 +121,10 @@ public class CardTable: UIScrollView, UIScrollViewDelegate, UIGestureRecognizerD
         }
         
         // Card
-        for (i, card) in cards.enumerated() {
+        for card in cards {
             addSubview(card)
+        }
+        for (i, card) in cards.enumerated() {
             card.table = self
             card.data = dataSource?.cardTable(dataToCardAt: i)
             card.reload()

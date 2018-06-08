@@ -12,6 +12,11 @@ import UIKit
 
 extension UIScreen {
     
+    /***/
+    var is_landscape: Bool {
+        return UIScreen.main.bounds.width > UIScreen.main.bounds.height
+    }
+    
     /**  */
     var width: CGFloat {
         return UIScreen.main.bounds.width

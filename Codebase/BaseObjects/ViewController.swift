@@ -88,9 +88,25 @@ public class ViewController: UIViewController {
         }
     }
     
-    @objc private func orientation_will_change() {
+    @objc private func orientation_will_change(_ notification: NSNotification) {
+        let i = notification.userInfo!["UIApplicationStatusBarOrientationUserInfoKey"] as! Int
+        var rect: CGRect
+        switch UIDeviceOrientation(rawValue: i)! {
+        case .faceDown, .faceUp, .portrait, .portraitUpsideDown, .unknown:
+            rect = CGRect(
+                x: 0, y: 0,
+                width: min(UIScreen.main.bounds.width, UIScreen.main.bounds.height),
+                height: max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            )
+        case .landscapeLeft, .landscapeRight:
+            rect = CGRect(
+                x: 0, y: 0,
+                width: max(UIScreen.main.bounds.width, UIScreen.main.bounds.height),
+                height: min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            )
+        }
         DispatchQueue.main.async {
-            self.orientation_will_change_action()
+            self.orientation_will_change_action(rect)
         }
     }
     
@@ -98,7 +114,7 @@ public class ViewController: UIViewController {
     public func orientation_changed_action() { }
     
     /** Override: Call when orientation will change at main queue */
-    public func orientation_will_change_action() { }
+    public func orientation_will_change_action(_ rect: CGRect) { }
     
     // MARK: - Keyboard Observer
     
