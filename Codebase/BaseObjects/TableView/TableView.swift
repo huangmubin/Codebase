@@ -15,6 +15,7 @@ public class TableView: UITableView {
     
     public init() {
         super.init(frame: CGRect.zero, style: UITableViewStyle.plain)
+        view_deploy()
     }
     
     public override init(frame: CGRect, style: UITableViewStyle) {

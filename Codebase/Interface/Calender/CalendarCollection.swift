@@ -20,7 +20,13 @@ extension CalendarView {
         /**  */
         public var date: Date {
             get { return calendar?.date ?? Date() }
-            set { calendar?.date = newValue }
+            set {
+                calendar?.date = newValue
+                calendar?.delegate?.calendar(
+                    view: calendar!,
+                    update: newValue
+                )
+            }
         }
         
         /**  */
@@ -40,13 +46,15 @@ extension CalendarView {
         /**  */
         public func update(cell: CalendarView.Collection.Cell, index: IndexPath) {
             cell.date = date.first(.month).first(.weekday).advance(.day, index.row)
+            print(cell.date)
             cell.is_month  = (cell.date.month == date.month)
             cell.is_select = (cell.is_month && cell.date.day == date.day)
             if cell.is_select { selecting = cell }
-            cell.view_reload()
+            cell.view_update(index: index, view: self)
             calendar?.delegate?.calendar(
                 view: calendar!,
                 update: cell,
+                date: cell.date,
                 index: index
             )
         }
@@ -82,7 +90,6 @@ extension CalendarView {
         
         public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CalendarView.Collection.Cell
-            cell.view_update(index: indexPath, view: self)
             update(cell: cell, index: indexPath)
             return cell
         }
@@ -159,6 +166,7 @@ extension CalendarView.Collection {
             info.text = date.day.description
             info.textColor = is_month ? Color.dark : Color.thin
             flag.backgroundColor = is_select ? Color.dark : Color.non
+            back.backgroundColor = Color.non
             view_bounds()
         }
         

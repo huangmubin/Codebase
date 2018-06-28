@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol CalendarViewDelegate: class {
-    func calendar(view: CalendarView, update cell: CalendarView.Collection.Cell, index: IndexPath)
+    func calendar(view: CalendarView, update cell: CalendarView.Collection.Cell, date: Date, index: IndexPath)
     func calendar(view: CalendarView, update date: Date)
 }
 
@@ -22,11 +22,7 @@ public class CalendarView: View {
     public weak var delegate: CalendarViewDelegate?
 
     /**  */
-    public var date: Date = Date() {
-        didSet {
-            delegate?.calendar(view: self, update: date)
-        }
-    }
+    public var date: Date = Date()
     
     /** is auto bounds */
     public var can_bounds: Bool = true

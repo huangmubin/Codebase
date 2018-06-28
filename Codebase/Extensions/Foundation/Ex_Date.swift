@@ -216,3 +216,25 @@ extension Date {
     }
     
 }
+
+
+// MARK: - Chinese
+
+extension Date {
+    
+    var year_cn: String {
+        let value = Calendar.Chinese.obj.component(.year, from: self)
+        return Calendar.Chinese.era[(value - 1) % 60]
+    }
+    
+    var month_cn: String {
+        let value = Calendar.Chinese.obj.component(.month, from: self)
+        return Calendar.Chinese.months[value - 1]
+    }
+    
+    var day_cn: String {
+        let value = Calendar.Chinese.obj.component(.day, from: self)
+        return Calendar.Chinese.days[value - 1]
+    }
+    
+}
