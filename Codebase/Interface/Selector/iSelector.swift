@@ -151,6 +151,13 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
     private var gradient_view: UIView = UIView()
     /** gradien layer */
     private var gradient: CAGradientLayer = CAGradientLayer()
+    /** gradien location */
+    public var gradien_locations: [NSNumber] = [0, 0.5, 1] {
+        didSet {
+            gradient.locations = gradien_locations
+            gradient.setNeedsDisplay()
+        }
+    }
     /** gradien color */
     @IBInspectable public var gradient_color: UIColor = UIColor.white {
         didSet {
@@ -204,7 +211,7 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
         gradient_view.isUserInteractionEnabled = false
         gradient.frame = bounds
         gradient.colors = [gradient_color.cgColor, UIColor(red: 1, green: 1, blue: 1, alpha: 0).cgColor, gradient_color.cgColor]
-        gradient.locations = [0, 0.5, 1]
+        gradient.locations = gradien_locations
         switch direction {
         case .vertical:
             gradient.startPoint = CGPoint(x: 0.5, y: 0)
