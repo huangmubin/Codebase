@@ -8,6 +8,16 @@
 
 import Foundation
 
+// MARK: - Notification
+
+extension String {
+    
+    var notification: Notification.Name {
+        return Notification.Name.init(self)
+    }
+    
+}
+
 // MARK: - 正则表达式
 
 extension String {
