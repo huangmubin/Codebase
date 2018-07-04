@@ -1,23 +1,23 @@
 //
-//  TableViewHeaderFooter.swift
+//  CollectionViewResulte.swift
 //  Days
 //
-//  Created by Myron on 2018/5/19.
+//  Created by Myron on 2018/7/4.
 //  Copyright © 2018年 Myron. All rights reserved.
 //
 
 import UIKit
 
-public class TableViewHeaderFooter: UITableViewHeaderFooterView {
-
+class CollectionViewReusable: UICollectionReusableView {
+    
     // MARK: - Init
     
-    override public init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         view_deploy()
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         view_deploy()
     }
@@ -28,7 +28,7 @@ public class TableViewHeaderFooter: UITableViewHeaderFooterView {
     // MARK: - Massage
     
     /** Cell Index Path */
-    public var section: Int = 0
+    public var section: Int!
     
     // MARK: Controller
     
@@ -101,7 +101,7 @@ public class TableViewHeaderFooter: UITableViewHeaderFooterView {
             height: bounds.height
         )
     }
-
+    
     // MARK: - Subviews
     
     /**  */

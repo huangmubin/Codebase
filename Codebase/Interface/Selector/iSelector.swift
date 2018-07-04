@@ -253,6 +253,7 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
     
     /** Update the size and gradient */
     private func update_direction() {
+        layout.scrollDirection = direction
         switch direction {
         case .vertical:
             size = CGSize(width: self.bounds.width, height: self.bounds.height / CGFloat(cells))
