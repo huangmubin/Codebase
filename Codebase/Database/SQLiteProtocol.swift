@@ -93,18 +93,18 @@ extension SQLiteProtocol {
     
 }
 
-// MARK: - Execut
+// MARK: - Execute
 
 extension SQLiteProtocol {
     
     /** Excute the sql */
-    static func execut(sql: String) -> Bool {
-        return SQLite.default.execut(sql: sql)
+    static func execute(sql: String) -> Bool {
+        return SQLite.default.execute(sql: sql)
     }
     
     /** Excute the sql */
-    func execut(sql: String) -> Bool {
-        return SQLite.default.execut(sql: sql)
+    func execute(sql: String) -> Bool {
+        return SQLite.default.execute(sql: sql)
     }
     
 }
@@ -127,7 +127,7 @@ extension SQLiteProtocol {
             sql.removeLast()
             sql.removeLast()
             sql += ");"
-            if execut(sql: sql) {
+            if execute(sql: sql) {
                 UserDefaults.standard.set(true, forKey: "SQLite.create.Databases.\(table)")
                 return true
             } else {
@@ -187,7 +187,7 @@ extension SQLiteProtocol {
         sql.removeLast()
         sql.removeLast()
         sql += ");"
-        return execut(sql: sql)
+        return execute(sql: sql)
     }
     
 }
@@ -214,13 +214,13 @@ extension SQLiteProtocol {
         sql.removeLast()
         sql.removeLast()
         sql += " where id = \(id);"
-        return execut(sql: sql)
+        return execute(sql: sql)
     }
     
     /** Update the data */
     @discardableResult func update(_ values: String) -> Bool {
         let sql = "update \(table) set \(values) where id = \(id)"
-        return execut(sql: sql)
+        return execute(sql: sql)
     }
     
 }
@@ -232,7 +232,7 @@ extension SQLiteProtocol {
     /** Delete self */
     @discardableResult func delete() -> Bool {
         let sql = "delete from \(table) where id = \(id);"
-        return execut(sql: sql)
+        return execute(sql: sql)
     }
     
 }

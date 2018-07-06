@@ -102,24 +102,24 @@ public class SQLite {
     // MARK: - Execute
     
     /** 执行不返回数据的 SQL 语句: 创表、更新、插入和删除操作. */
-    public func execut(sql: String) -> Bool {
+    public func execute(sql: String) -> Bool {
         objc_sync_enter(self)
         
         if db == nil {
-            output("execut db open faild - \(sql);")
+            output("execute db open faild - \(sql);")
             objc_sync_exit(self)
             return false
         }
         
         guard let c_sql = sql.cString(using: .utf8) else {
-            output("execut c_sql faild - \(sql);")
+            output("execute c_sql faild - \(sql);")
             objc_sync_exit(self)
             return false
         }
         
         var error: UnsafeMutablePointer<Int8>? = nil
         if sqlite3_exec(db, c_sql, nil, nil, &error) != SQLITE_OK {
-            output("execut faild - \(sql) - Error: \(self.error);")
+            output("execute faild - \(sql) - Error: \(self.error);")
             objc_sync_exit(self)
             return false
         }
@@ -128,7 +128,7 @@ public class SQLite {
         if let log = self.log {
             if !sql.contains(SQLiteLogs.table) {
                 log.insert(sql: sql)
-                output("execut success - \(sql);")
+                output("execute success - \(sql);")
                 objc_sync_exit(self)
                 return true
             } else {
@@ -137,7 +137,7 @@ public class SQLite {
             }
         }
         
-        output("execut success - \(sql);")
+        output("execute success - \(sql);")
         objc_sync_exit(self)
         return true
     }
@@ -149,13 +149,13 @@ public class SQLite {
         objc_sync_enter(self)
         
         if db == nil {
-            output("execut db open faild - \(sql);")
+            output("execute db open faild - \(sql);")
             objc_sync_exit(self)
             return []
         }
         
         guard let c_sql = sql.cString(using: .utf8) else {
-            output("execut c_sql faild - \(sql);")
+            output("execute c_sql faild - \(sql);")
             objc_sync_exit(self)
             return []
         }
@@ -202,13 +202,13 @@ public class SQLite {
         objc_sync_enter(self)
         
         if db == nil {
-            output("execut db open faild - \(sql);")
+            output("execute db open faild - \(sql);")
             objc_sync_exit(self)
             return
         }
         
         guard let c_sql = sql.cString(using: .utf8) else {
-            output("execut c_sql faild - \(sql);")
+            output("execute c_sql faild - \(sql);")
             objc_sync_exit(self)
             return
         }
@@ -242,13 +242,13 @@ public class SQLite {
         objc_sync_enter(self)
         
         if db == nil {
-            output("execut db open faild - \(sql);")
+            output("execute db open faild - \(sql);")
             objc_sync_exit(self)
             return
         }
         
         guard let c_sql = sql.cString(using: .utf8) else {
-            output("execut c_sql faild - \(sql);")
+            output("execute c_sql faild - \(sql);")
             objc_sync_exit(self)
             return
         }
@@ -292,13 +292,13 @@ public class SQLite {
         objc_sync_enter(self)
         
         if db == nil {
-            output("execut db open faild - \(sql);")
+            output("execute db open faild - \(sql);")
             objc_sync_exit(self)
             return
         }
         
         guard let c_sql = sql.cString(using: .utf8) else {
-            output("execut c_sql faild - \(sql);")
+            output("execute c_sql faild - \(sql);")
             objc_sync_exit(self)
             return
         }
@@ -331,13 +331,13 @@ public class SQLite {
         objc_sync_enter(self)
         
         if db == nil {
-            output("execut db open faild - \(sql);")
+            output("execute db open faild - \(sql);")
             objc_sync_exit(self)
             return value
         }
         
         guard let c_sql = sql.cString(using: .utf8) else {
-            output("execut c_sql faild - \(sql);")
+            output("execute c_sql faild - \(sql);")
             objc_sync_exit(self)
             return value
         }
