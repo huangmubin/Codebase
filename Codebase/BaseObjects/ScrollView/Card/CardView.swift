@@ -16,17 +16,21 @@ public class CardView: View {
     /** default init */
     convenience init(height: CGFloat?) {
         self.init(frame: CGRect(x: 0, y: 0, width: 300, height: height ?? 80))
-        if height == nil && default_height != 80 {
-            self.frame.size.height = default_height
+        if height != nil {
+            if height! != 80 {            
+                self.default_height = height!
+                self.frame.size.height = default_height
+            }
         }
-        clipsToBounds = true
+        self.clipsToBounds = true
     }
     
     /** default init */
     convenience init(id: String, height: CGFloat) {
         self.init(frame: CGRect(x: 0, y: 0, width: 300, height: height))
         self.identifier = id
-        clipsToBounds = true
+        self.default_height = height
+        self.clipsToBounds = true
     }
     
     // MARK: - Table
