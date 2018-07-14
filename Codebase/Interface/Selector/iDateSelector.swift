@@ -43,11 +43,11 @@ public class iDateSelector: UIView {
     
     // MARK: - iSelectors
     
-    @IBOutlet weak var year: iSelector! = iSelector(direction: .vertical)
-    @IBOutlet weak var month: iSelector! = iSelector(direction: .vertical)
-    @IBOutlet weak var day: iSelector! = iSelector(direction: .vertical)
-    @IBOutlet weak var hour: iSelector! = iSelector(direction: .vertical)
-    @IBOutlet weak var minute: iSelector! = iSelector(direction: .vertical)
-    @IBOutlet weak var second: iSelector! = iSelector(direction: .vertical)
+    @IBOutlet var year: iSelector! = iSelector(direction: .vertical)
+    @IBOutlet var month: iSelector! = iSelector(direction: .vertical)
+    @IBOutlet var day: iSelector! = iSelector(direction: .vertical)
+    @IBOutlet var hour: iSelector! = iSelector(direction: .vertical)
+    @IBOutlet var minute: iSelector! = iSelector(direction: .vertical)
+    @IBOutlet var second: iSelector! = iSelector(direction: .vertical)
     
 }

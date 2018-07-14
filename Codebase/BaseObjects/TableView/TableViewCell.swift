@@ -101,7 +101,7 @@ public class TableViewCell: UITableViewCell {
 extension UIViewController {
     
     /** Override in UIViewController to receive TableViewCell's massage */
-    public func tableView(cell: TableViewCell, user action: String, value: Any? = nil) { }
+    @objc public func tableView(cell: TableViewCell, user action: String, value: Any? = nil) { }
     
 }
 
@@ -110,6 +110,6 @@ extension UIViewController {
 extension UIView {
     
     /** Override in UIViewController to receive TableViewCell's massage */
-    public func tableView(cell: TableViewCell, user action: String, value: Any? = nil) { }
+    @objc public func tableView(cell: TableViewCell, user action: String, value: Any? = nil) { }
     
 }

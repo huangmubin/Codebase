@@ -59,6 +59,7 @@ class Timer {
             wallDeadline: DispatchWallTime.now(),
             repeating: interval
         )
+        
         timer?.setEventHandler(handler: { [weak self] in
             if let w_self = self {
                 if w_self.time < 0 {

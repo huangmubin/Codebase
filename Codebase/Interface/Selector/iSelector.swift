@@ -50,6 +50,9 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
     /** Cell size */
     public var size: CGSize = CGSize.zero
     
+    /** loop */
+    public var is_loop: Bool = true
+    
     // MARK: Index
     
     /** scroll view's index */
@@ -59,7 +62,7 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
             if size.height > 0 {
                 return Int(
                     collection.contentOffset.y / size.height + 0.5
-                )
+                ) % data.count
             } else {
                 return 0
             }
@@ -67,7 +70,7 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
             if size.width > 0 {
                 return Int(
                     collection.contentOffset.x / size.width + 0.5
-                )
+                ) % data.count
             } else {
                 return 0
             }
@@ -141,7 +144,7 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
     @IBInspectable public var cells: Int = 5 {
         didSet {
             update_direction()
-            collection.reloadData()
+            reload()
         }
     }
     
@@ -277,6 +280,15 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
     /** Reload */
     public func reload() {
         collection.reloadData()
+        if is_loop {
+            if data.count >= cells {
+                collection.scrollToItem(
+                    at: IndexPath(row: data.count - (cells / 2), section: 0),
+                    at: UICollectionViewScrollPosition.top,
+                    animated: false
+                )
+            }
+        }
     }
     
     /** Scroll */
@@ -297,7 +309,11 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
     // MARK: - UICollectionViewDataSource
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count + cells - 1
+        if is_loop {
+            return data.count * 3
+        } else {
+            return data.count + cells - 1
+        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -314,13 +330,17 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
         
         if let label = cell.viewWithTag(100) as? UILabel {
             label.frame = cell.bounds
-            let space = (cells - 1) / 2
-            if indexPath.row < space {
-                label.text = ""
-            } else if indexPath.row >= data.count + space {
-                label.text = ""
+            if is_loop {
+                label.text = data[indexPath.row % data.count]
             } else {
-                label.text = data[indexPath.row - space]
+                let space = (cells - 1) / 2
+                if indexPath.row < space {
+                    label.text = ""
+                } else if indexPath.row >= data.count + space {
+                    label.text = ""
+                } else {
+                    label.text = data[indexPath.row - space]
+                }
             }
         }
         return cell
@@ -343,16 +363,39 @@ public class iSelector: UIView, UICollectionViewDataSource, UICollectionViewDele
         switch direction {
         case .vertical:
             i = Int(scrollView.contentOffset.y / size.height + 0.5)
+            scrollView.isUserInteractionEnabled = false
             scrollView.setContentOffset(
                 CGPoint(x: 0, y: CGFloat(i) * size.height),
                 animated: true
             )
         case .horizontal:
             i = Int(scrollView.contentOffset.x / size.width + 0.5)
+            scrollView.isUserInteractionEnabled = false
             scrollView.setContentOffset(
                 CGPoint(x: CGFloat(i) * size.width, y: 0),
                 animated: true
             )
+        }
+        if is_loop {
+            i = i % data.count + data.count
+            var point: CGPoint
+            switch direction {
+            case .vertical:
+                point = CGPoint(x: 0, y: CGFloat(i) * size.height)
+            case .horizontal:
+                point = CGPoint(x: CGFloat(i) * size.width, y: 0)
+            }
+            DispatchQueue.main.delay(time: 0.5, execute: {
+                switch self.direction {
+                case .vertical:
+                    scrollView.setContentOffset(point, animated: false)
+                case .horizontal:
+                    scrollView.setContentOffset(point, animated: false)
+                }
+                scrollView.isUserInteractionEnabled = true
+            })
+        } else {
+            scrollView.isUserInteractionEnabled = true
         }
         delegate?.i_selector(self, update_index: i)
     }
