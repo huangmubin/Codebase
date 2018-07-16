@@ -8,16 +8,22 @@
 
 import Foundation
 
-protocol TimerDelegate: class {
+public protocol TimerDelegate: class {
     func timer_update(total: Int, time: Int, interval: DispatchTimeInterval)
     func timer_finish(total: Int, time: Int, interval: DispatchTimeInterval)
 }
 
-class Timer {
+public class Timer {
+    
+    public func clear() {
+        timer?.cancel()
+        timer = nil
+        delegate = nil
+    }
     
     // MARK: - Init
     
-    convenience init(delegate: TimerDelegate) {
+    public convenience init(delegate: TimerDelegate) {
         self.init()
         self.delegate = delegate
     }
@@ -28,21 +34,21 @@ class Timer {
     fileprivate var timer: DispatchSourceTimer? = nil
     
     /***/
-    weak var delegate: TimerDelegate?
+    public weak var delegate: TimerDelegate?
     /** Total */
-    var total: Int = 0
+    public var total: Int = 0
     /** Call back time */
-    var time: Int = 0
+    public var time: Int = 0
     
     // MARK: - Action
     
     /** 每秒回调一次 */
-    func run(second value: Int) {
+    public func run(second value: Int) {
         run(time: value, interval: DispatchTimeInterval.seconds(1))
     }
     
     /** 自定义毫秒回调一次 */
-    func run(millisecond value: Int, space: Int) {
+    public func run(millisecond value: Int, space: Int) {
         run(time: value, interval: DispatchTimeInterval.milliseconds(space))
     }
     

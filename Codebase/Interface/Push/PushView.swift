@@ -15,11 +15,11 @@ public class PushView: View, TimerDelegate {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        //print("PushView is deinit")
+        print("PushView is deinit")
     }
     
     public override func view_deploy() {
-        //print("PushView is view deploy.")
+        print("PushView is view deploy.")
         
         key_window.rootViewController = UIViewController()
         key_window.rootViewController?.view.isUserInteractionEnabled = false
@@ -28,6 +28,11 @@ public class PushView: View, TimerDelegate {
         key_window.windowLevel = UIWindowLevelStatusBar
         key_window.alpha = 1
         key_window.addSubview(self)
+        
+        tap = UITapGestureRecognizer(target: self, action: #selector(tap_action(_:)))
+        key_window.addGestureRecognizer(tap)
+        
+        timer = Timer(delegate: self)
         
         NotificationCenter.default.addObserver(
             self,
@@ -44,11 +49,6 @@ public class PushView: View, TimerDelegate {
     }
     
     // MARK: - Interface
-    
-    /** 弹出窗口 */
-    public func push() {
-        key_window.makeKeyAndVisible()
-    }
     
     /** Override: Call when keyboard change, before open and close */
     public func keyboard_change(rect: CGRect) { }
@@ -117,8 +117,48 @@ public class PushView: View, TimerDelegate {
         }
     }
     
-    // MARK: - TimerDelegate
+    // MARK: - Timer
+    
+    public var timer: Timer!
     
     public func timer_update(total: Int, time: Int, interval: DispatchTimeInterval) { }
     public func timer_finish(total: Int, time: Int, interval: DispatchTimeInterval) { }
+    
+    // MARK: - Gesture
+    
+    public var tap: UITapGestureRecognizer!
+    
+    /** 点击触摸时间，默认为关闭 */
+    @objc public func tap_action(_ sender: UITapGestureRecognizer) {
+        close()
+    }
+    
+    // MARK: - Action
+    
+    /** 弹出窗口 */
+    public func push() {
+        key_window.makeKeyAndVisible()
+    }
+    
+    public func push(value: Any) {
+        update(value)
+        push()
+    }
+    
+    /** 关闭窗口 */
+    public func close() {
+        clear()
+    }
+    
+    /** 关闭窗口 */
+    public func clear() {
+        removeFromSuperview()
+        key_window.isHidden = true
+        timer?.clear()
+        timer = nil
+    }
+    
+    /** 传输数据 */
+    public func update(_ value: Any) { }
+    
 }
