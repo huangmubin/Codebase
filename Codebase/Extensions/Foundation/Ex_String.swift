@@ -18,6 +18,24 @@ extension String {
     
 }
 
+// MARK: - Sub String
+
+extension String {
+    
+    public subscript(_ range: Range<Int>) -> String {
+        return String(self[index(startIndex, offsetBy: range.lowerBound) ..< index(startIndex, offsetBy: range.upperBound)])
+    }
+    
+    public func before(_ index: Int) -> String {
+        return self[0 ..< index]
+    }
+    
+    public func after(_ index: Int) -> String {
+        return self[index ..< self.count]
+    }
+    
+}
+
 // MARK: - 正则表达式
 
 extension String {

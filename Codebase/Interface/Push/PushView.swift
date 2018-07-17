@@ -15,11 +15,11 @@ public class PushView: View, TimerDelegate {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        print("PushView is deinit")
+        //print("PushView is deinit")
     }
     
     public override func view_deploy() {
-        print("PushView is view deploy.")
+        //print("PushView is view deploy.")
         
         key_window.rootViewController = UIViewController()
         key_window.rootViewController?.view.isUserInteractionEnabled = false

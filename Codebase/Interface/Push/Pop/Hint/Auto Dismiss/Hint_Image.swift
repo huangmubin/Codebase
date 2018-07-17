@@ -55,19 +55,6 @@ extension Hint {
             )
         }
         
-//        
-//        // MARK: - Push
-//        
-//        /**  */
-//        public override func push_animation() {
-//            self.frame = self.rect_hide
-//            self.alpha = 0
-//            UIView.animate(withDuration: push_animation_time, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveLinear, animations: {
-//                self.frame = self.rect_show
-//                self.alpha = 1
-//            }, completion: nil)
-//        }
-//        
         // MARK: - Close
         
         /**  */

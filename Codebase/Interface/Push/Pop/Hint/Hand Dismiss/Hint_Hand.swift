@@ -16,6 +16,14 @@ extension Hint {
         
         public var content: Hint.Content?
         
+        public var content_size: CGSize = CGSize(width: 40, height: 40)
+        
+        public func deploy(content: Hint.Content) {
+            self.content = content
+            addSubview(content)
+            view_bounds()
+        }
+        
         // MARK: - Deploy
         
         public override func view_deploy() {
@@ -24,17 +32,24 @@ extension Hint {
             close_animation_time = 0.5
         }
         
+        // MARK: - Tap
+        
+        public override func tap_action(_ sender: UITapGestureRecognizer) { }
+        
         // MARK: - Push
         
-        /**  */
         public override func push() {
             super.push()
             content?.run()
         }
         
-        // MARK: - Tap
+        // MARK: - Close
         
-        public override func tap_action(_ sender: UITapGestureRecognizer) { }
+        public override func clear() {
+            super.clear()
+            content?.clear()
+            content = nil
+        }
         
     }
     

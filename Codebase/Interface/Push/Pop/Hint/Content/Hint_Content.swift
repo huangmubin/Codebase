@@ -12,6 +12,9 @@ extension Hint {
     
     public class Content: View {
         
+        /***/
+        var animate_time: TimeInterval = 2
+        
         /** Override: 启动动画 */
         public func run() {}
         /** Override: 关闭动画 */

@@ -99,9 +99,6 @@ extension Hint {
             })
         }
         
-        public override func tap_action(_ sender: UITapGestureRecognizer) {
-            self.close()
-        }
     }
     
 }
