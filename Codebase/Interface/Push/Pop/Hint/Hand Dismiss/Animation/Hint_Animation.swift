@@ -28,12 +28,13 @@ extension Hint {
         
         public override func view_bounds() {
             super.view_bounds()
+            let size = content?.size ?? CGSize(width: 40, height: 40)
             
             let c_frame = CGRect(
-                x: (bounds.width - content_size.width) / 2,
+                x: (bounds.width - size.width) / 2,
                 y: edge.top,
-                width: content_size.width,
-                height: content_size.height
+                width: size.width,
+                height: size.height
             )
         
             content?.frame = c_frame
@@ -51,6 +52,7 @@ extension Hint {
             
             let screen_size = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height) * 0.5
             var limit: CGFloat = 100
+            let content_size = content?.size ?? CGSize(width: 40, height: 40)
             
             var size: CGSize = CGSize.zero
             repeat {
@@ -73,12 +75,7 @@ extension Hint {
                 width: size.width,
                 height: size.height
             )
-            rect_hide = CGRect(
-                x: rect_show.minX + 40,
-                y: rect_show.minY + 40,
-                width: rect_show.width - 80,
-                height: rect_show.height - 80
-            )
+            rect_hide_default()
         }
         
         // MARK: - Push

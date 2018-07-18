@@ -47,12 +47,7 @@ extension Hint {
                 width: image_size.width + edge.left + edge.right,
                 height: image_size.height + edge.top + edge.bottom
             )
-            rect_hide = CGRect(
-                x: rect_show.minX + 40,
-                y: rect_show.minY + 40,
-                width: rect_show.width - 80,
-                height: rect_show.height - 80
-            )
+            rect_hide_default()
         }
         
         // MARK: - Close

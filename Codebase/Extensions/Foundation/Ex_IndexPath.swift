@@ -16,4 +16,9 @@ extension IndexPath {
         self = IndexPath(row: array.count - 1, section: sec)
     }
     
+    /** 创建 0 section */
+    public init(_ row: Int) {
+        self = IndexPath(row: row, section: 0)
+    }
+    
 }

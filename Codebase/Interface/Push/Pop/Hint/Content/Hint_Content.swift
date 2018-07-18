@@ -12,8 +12,10 @@ extension Hint {
     
     public class Content: View {
         
+        public var size: CGSize = CGSize(width: 40, height: 40)
+        
         /***/
-        var animate_time: TimeInterval = 2
+        public var animate_time: TimeInterval = 2
         
         /** Override: 启动动画 */
         public func run() {}

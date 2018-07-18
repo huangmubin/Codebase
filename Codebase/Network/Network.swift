@@ -544,6 +544,12 @@ extension Network {
             }
             return nil
         }
+        public func header<T>(_ key: String, _ null: T) -> T {
+            if let headers = (response as? HTTPURLResponse)?.allHeaderFields {
+                return (headers[key] as? T) ?? null
+            }
+            return null
+        }
         
         /**
          Get value in other.

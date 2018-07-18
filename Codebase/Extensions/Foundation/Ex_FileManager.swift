@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Myron. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - Normal File Operation
 
@@ -80,6 +80,16 @@ extension FileManager {
             return true
         } catch { }
         return false
+    }
+    
+}
+
+// MARK: - Image Read
+
+extension FileManager {
+    
+    public class func image(_ path: String) -> UIImage? {
+        return UIImage(contentsOfFile: path)
     }
     
 }

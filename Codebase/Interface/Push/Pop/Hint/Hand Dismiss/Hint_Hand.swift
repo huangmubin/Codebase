@@ -16,7 +16,7 @@ extension Hint {
         
         public var content: Hint.Content?
         
-        public var content_size: CGSize = CGSize(width: 40, height: 40)
+        //public var content_size: CGSize = CGSize(width: 40, height: 40)
         
         public func deploy(content: Hint.Content) {
             self.content = content
@@ -50,6 +50,11 @@ extension Hint {
             content?.clear()
             content = nil
         }
+        
+        // MARK: - Content Action
+        
+        /** Contents Action return */
+        public func content_action(_ content: Hint.Content, value: Any) { }
         
     }
     

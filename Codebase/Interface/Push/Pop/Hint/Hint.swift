@@ -16,19 +16,19 @@ public class Hint: PushView {
         
         key_window.backgroundColor = UIColor.clear
         
-        rect_hide = CGRect(
-            x: (UIScreen.main.bounds.width - 20) / 2,
-            y: (UIScreen.main.bounds.height - 20) / 2,
-            width: 20,
-            height: 20
-        )
+//        rect_hide = CGRect(
+//            x: (UIScreen.main.bounds.width - 20) / 2,
+//            y: (UIScreen.main.bounds.height - 20) / 2,
+//            width: 20,
+//            height: 20
+//        )
         let w = UIScreen.main.bounds.width * 0.4
         rect_show = CGRect(
             x: (UIScreen.main.bounds.width - w) / 2,
             y: (UIScreen.main.bounds.height - w) / 2,
             width: w, height: w
         )
-        
+        rect_hide_default()
         addSubview(back)
     }
     
@@ -58,6 +58,15 @@ public class Hint: PushView {
     public override func view_bounds() {
         super.view_bounds()
         back.frame = bounds
+    }
+    
+    public func rect_hide_default() {
+        rect_hide = CGRect(
+            x: rect_show.minX + 40,
+            y: rect_show.minY + 40,
+            width: rect_show.width - 80,
+            height: rect_show.height - 80
+        )
     }
     
     // MARK: - Back
@@ -123,5 +132,4 @@ public class Hint: PushView {
             self.clear()
         })
     }
-    
 }
