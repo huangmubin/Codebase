@@ -14,6 +14,7 @@ public class Hint: PushView {
         super.view_deploy()
         clipsToBounds = true
         
+        
         key_window.backgroundColor = UIColor.clear
         
 //        rect_hide = CGRect(

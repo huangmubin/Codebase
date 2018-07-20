@@ -61,7 +61,12 @@ extension Hint {
                 width: w, height: h
             )
             rect_hide_default()
-            self.frame = rect_show
+            if self.frame.size == rect_show.size {
+                self.frame = rect_show
+                view_bounds()
+            } else {
+                self.frame = rect_show
+            }
         }
         
         public func deploy(objs: Any) { }
