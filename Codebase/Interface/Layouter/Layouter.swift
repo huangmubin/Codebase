@@ -116,7 +116,7 @@ extension Layouter {
             updateActive()
         }
         
-        fileprivate func updateActive() {
+        public func updateActive() {
             OperationQueue.main.addOperation {
                 for (_, layout) in self.layouts {
                     layout.layout?.isActive = false

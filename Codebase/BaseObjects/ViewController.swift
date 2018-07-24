@@ -60,9 +60,22 @@ public class ViewController: UIViewController {
         }
     }
     
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if view_first_appeared {
+            view_first_appeared = false
+            viewFirstAppear()
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    // MARK: - First
+    
+    public var view_first_appeared: Bool = true
+    func viewFirstAppear() { }
     
     // MARK: - Orientation supporet
     
