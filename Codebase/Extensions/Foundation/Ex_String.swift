@@ -8,6 +8,16 @@
 
 import Foundation
 
+// MARK: - 本地化
+
+extension String {
+    
+    var language: String {
+        return self
+    }
+    
+}
+
 // MARK: - Notification
 
 extension String {

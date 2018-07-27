@@ -10,6 +10,14 @@ import UIKit
 
 extension UILabel {
     
+    convenience init(text: String, font: UIFont = UIFont(), color: UIColor = UIColor.black, alignment: NSTextAlignment = .center) {
+        self.init()
+        self.text = text
+        self.font = font
+        self.textColor = color
+        self.textAlignment = alignment
+    }
+    
     /** 用于检测字符串高度的对象 */
     public static let view: UILabel = {
         let label = UILabel(frame: CGRect.zero)
