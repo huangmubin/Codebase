@@ -122,7 +122,16 @@ extension UIDevice {
     
     /** 是否是手机，只在真机有效 */
     public class func iPhone() -> Bool {
-        return model().hasPrefix("iPhone")
+        if model().hasPrefix("iPhone") {
+            return true
+        } else {
+            let w = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            let h = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            if (w / h) == (375.0 / 812.0) {
+                return true
+            }
+            return false
+        }
     }
     
     /** iPhone X */
