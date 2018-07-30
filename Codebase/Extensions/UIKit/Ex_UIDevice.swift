@@ -122,12 +122,35 @@ extension UIDevice {
     
     /** 是否是手机，只在真机有效 */
     public class func iPhone() -> Bool {
+        print("UIScreen.main.bounds: \(UIScreen.main.bounds.width) - \(UIScreen.main.bounds.height)")
         if model().hasPrefix("iPhone") {
             return true
         } else {
             let w = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
             let h = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
-            if (w / h) == (375.0 / 812.0) {
+            let r = w / h
+            let iphones: [CGFloat] = [
+                375.0 / 812.0,
+                414.0 / 736.0
+            ]
+            if iphones.contains(r) {
+                return true
+            }
+            return false
+        }
+    }
+    
+    public class func iPhonePlus() -> Bool {
+        if model().contains("Plus") {
+            return true
+        } else {
+            let w = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            let h = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            let r = w / h
+            let iphones: [CGFloat] = [
+                414.0 / 736.0
+            ]
+            if iphones.contains(r) {
                 return true
             }
             return false
