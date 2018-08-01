@@ -120,18 +120,32 @@ extension UIDevice {
 
 extension UIDevice {
     
+    static var need_ouput: Bool = true
+    
+    private static var _model_type: String?
+    private class func model_type() -> String {
+        if _model_type == nil {
+            _model_type = model()
+        }
+        return _model_type!
+    }
+    
+    
     /** 是否是手机，只在真机有效 */
     public class func iPhone() -> Bool {
-        print("UIScreen.main.bounds: \(UIScreen.main.bounds.width) - \(UIScreen.main.bounds.height)")
-        if model().hasPrefix("iPhone") {
+        if need_ouput {
+            need_ouput = false
+            print("UIScreen.main.bounds: \(UIScreen.main.bounds.width) - \(UIScreen.main.bounds.height)")
+        }
+        if model_type().hasPrefix("iPhone") {
             return true
         } else {
             let w = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
             let h = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
             let r = w / h
             let iphones: [CGFloat] = [
-                375.0 / 812.0,
-                414.0 / 736.0
+                375.0 / 812.0, // X
+                414.0 / 736.0  // 8 Plus
             ]
             if iphones.contains(r) {
                 return true
@@ -159,11 +173,17 @@ extension UIDevice {
     
     /** iPhone X */
     public class func iPhoneX() -> Bool {
-        let model = UIDevice.model()
+        let model = model_type()
         if model == "iPhone X" {
             return true
         } else if model == "Simulator" {
-            if (UIScreen.main.bounds.width / UIScreen.main.bounds.height) == (1125.0 / 2436.0) {
+            let w = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            let h = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+            let r = w / h
+            let iphones: [CGFloat] = [
+                375.0 / 812.0, // X
+            ]
+            if iphones.contains(r) {
                 return true
             }
         }
